@@ -55,14 +55,15 @@ extension ViewController: UIImagePickerControllerDelegate {
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
 
-        guard let selectedImage = info[.originalImage] as? UIImage else {
-            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+            guard let selectedImage = info[.originalImage] as? UIImage else {
+                fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+            }
+
+            photoImageView.image = selectedImage
+
+            dismiss(animated: true, completion: nil)
         }
 
-        photoImageView.image = selectedImage
-
-        dismiss(animated: true, completion: nil)
-    }
 }
 extension ViewController: UINavigationControllerDelegate {
 

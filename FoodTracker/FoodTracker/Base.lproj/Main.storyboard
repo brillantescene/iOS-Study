@@ -34,7 +34,7 @@
                                     <action selector="setDefaultLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pUv-8D-3bX"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="600x600SC.DN01" translatesAutoresizingMaskIntoConstraints="NO" id="6Nw-OO-Vkr">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="600x600SC.DN01" translatesAutoresizingMaskIntoConstraints="NO" id="6Nw-OO-Vkr">
                                 <rect key="frame" x="20" y="259" width="335" height="335"/>
                                 <gestureRecognizers/>
                                 <constraints>
