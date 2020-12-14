@@ -39,10 +39,22 @@ class RatingControl: UIStackView {
         }
         ratingButtons.removeAll()
         
+        // Load Button Images
+        let bundle = Bundle(for: type(of: self))
+        let filledStar = UIImage(systemName: "star.fill")
+        let emptyStar = UIImage(systemName: "star")
+        let highlightedStar = UIImage(named:"star.fill")
+        
+        
         for _ in 0..<starCount {
             // Create the button
             let button = UIButton()
-            button.backgroundColor = UIColor.red
+//            button.backgroundColor = UIColor.red
+            
+            button.setImage(emptyStar, for: .normal)
+                    button.setImage(filledStar, for: .selected)
+                    button.setImage(highlightedStar, for: .highlighted)
+                    button.setImage(highlightedStar, for: [.highlighted, .selected])
             
             // Add constraints
             button.translatesAutoresizingMaskIntoConstraints = false
