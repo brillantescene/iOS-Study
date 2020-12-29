@@ -8,8 +8,6 @@
 	<string>사용자의 위치를 받습니다.</string>
 	<key>NMFClientId</key>
 	<string>1m6vwozbj7</string>
-	<key>KAKAO_APP_KEY</key>
-	<string>e519f36b0c2e43862955580aaf545423</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

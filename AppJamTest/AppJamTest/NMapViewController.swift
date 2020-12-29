@@ -39,5 +39,6 @@ class NMapViewController: UIViewController {
         let naverMapView = NMFMapView(frame: view.frame)
         naverMapView.lightness = -0.6
         view.addSubview(naverMapView)
+    }
 
 }

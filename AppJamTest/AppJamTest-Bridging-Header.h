@@ -8,6 +8,6 @@
 #ifndef AppJamTest_Bridging_Header_h
 #define AppJamTest_Bridging_Header_h
 
-#import <DaumMap/MTMapView.h>
+
 
 #endif /* AppJamTest_Bridging_Header_h */
