@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VVR-cF-YyZ">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,20 +13,16 @@
             <objects>
                 <viewController id="VVR-cF-YyZ" customClass="NMapViewController" customModule="AppJamTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wfx-ai-ynj">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mue-o9-m9s" customClass="NMFMapView">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="84" width="375" height="694"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afp-J1-CR1">
-                                <rect key="frame" x="360" y="48" width="22" height="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqE-d8-QpG">
+                                <rect key="frame" x="321" y="46" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="star.fill" catalog="system"/>
-                                <connections>
-                                    <action selector="changeColor:" destination="VVR-cF-YyZ" eventType="touchUpInside" id="duF-20-hGc"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Wom-Mu-CRF"/>
@@ -35,20 +31,20 @@
                             <constraint firstItem="Wom-Mu-CRF" firstAttribute="trailing" secondItem="Mue-o9-m9s" secondAttribute="trailing" id="Qld-ra-fcJ"/>
                             <constraint firstItem="Mue-o9-m9s" firstAttribute="leading" secondItem="Wom-Mu-CRF" secondAttribute="leading" id="Ssr-Vn-sPd"/>
                             <constraint firstItem="Wom-Mu-CRF" firstAttribute="bottom" secondItem="Mue-o9-m9s" secondAttribute="bottom" id="a69-B3-Z9w"/>
-                            <constraint firstItem="Mue-o9-m9s" firstAttribute="top" secondItem="Wom-Mu-CRF" secondAttribute="top" id="mYC-dn-Tk6"/>
+                            <constraint firstItem="Mue-o9-m9s" firstAttribute="top" secondItem="Wom-Mu-CRF" secondAttribute="top" constant="40" id="mYC-dn-Tk6"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="Mue-o9-m9s" id="h1g-hP-zBH"/>
+                        <outlet property="myBtn" destination="aqE-d8-QpG" id="4ZS-eQ-i2W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLp-Zf-WUR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="169.56521739130437" y="91.741071428571431"/>
+            <point key="canvasLocation" x="168.80000000000001" y="91.625615763546804"/>
         </scene>
     </scenes>
     <resources>
-        <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
