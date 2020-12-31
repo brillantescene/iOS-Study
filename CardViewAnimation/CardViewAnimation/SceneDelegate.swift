@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  6th-Seminar
+//  CardViewAnimation
 //
-//  Created by ✨EUGENE✨ on 2020/11/21.
+//  Created by ✨EUGENE✨ on 2020/12/31.
 //
 
 import UIKit
