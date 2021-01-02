@@ -16,6 +16,10 @@
 		6B6CA8542599C4C5002B5B21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B6CA8522599C4C5002B5B21 /* LaunchScreen.storyboard */; };
 		6B7129822599E532001A54E9 /* NaverMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B7129812599E532001A54E9 /* NaverMap.storyboard */; };
 		6B7129852599E5A5001A54E9 /* NMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7129842599E5A5001A54E9 /* NMapViewController.swift */; };
+		6B869BF725A082520068BFD2 /* NaverTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B869BF625A082520068BFD2 /* NaverTest.storyboard */; };
+		6B869BFA25A082610068BFD2 /* NaverTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B869BF925A082610068BFD2 /* NaverTestVC.swift */; };
+		6B869BFE25A083190068BFD2 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B869BFC25A083190068BFD2 /* CardViewController.swift */; };
+		6B869BFF25A083190068BFD2 /* CardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B869BFD25A083190068BFD2 /* CardViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +37,10 @@
 		6B6CA8B32599C64E002B5B21 /* AppJamTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppJamTest-Bridging-Header.h"; sourceTree = "<group>"; };
 		6B7129812599E532001A54E9 /* NaverMap.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NaverMap.storyboard; sourceTree = "<group>"; };
 		6B7129842599E5A5001A54E9 /* NMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMapViewController.swift; sourceTree = "<group>"; };
+		6B869BF625A082520068BFD2 /* NaverTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NaverTest.storyboard; sourceTree = "<group>"; };
+		6B869BF925A082610068BFD2 /* NaverTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverTestVC.swift; sourceTree = "<group>"; };
+		6B869BFC25A083190068BFD2 /* CardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		6B869BFD25A083190068BFD2 /* CardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,14 +78,15 @@
 			isa = PBXGroup;
 			children = (
 				6B6CA8472599C4C3002B5B21 /* AppDelegate.swift */,
-				6B7129812599E532001A54E9 /* NaverMap.storyboard */,
+				6B869BED25A081F20068BFD2 /* NMap+Card */,
 				6B6CA8492599C4C3002B5B21 /* SceneDelegate.swift */,
-				6B7129842599E5A5001A54E9 /* NMapViewController.swift */,
 				6B6CA84B2599C4C3002B5B21 /* ViewController.swift */,
 				6B6CA84D2599C4C3002B5B21 /* Main.storyboard */,
 				6B6CA8502599C4C5002B5B21 /* Assets.xcassets */,
 				6B6CA8522599C4C5002B5B21 /* LaunchScreen.storyboard */,
 				6B6CA8552599C4C5002B5B21 /* Info.plist */,
+				6B869BF625A082520068BFD2 /* NaverTest.storyboard */,
+				6B869BF925A082610068BFD2 /* NaverTestVC.swift */,
 			);
 			path = AppJamTest;
 			sourceTree = "<group>";
@@ -88,6 +97,17 @@
 				593AB0FC848498C62E09DC5A /* Pods_AppJamTest.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6B869BED25A081F20068BFD2 /* NMap+Card */ = {
+			isa = PBXGroup;
+			children = (
+				6B869BFC25A083190068BFD2 /* CardViewController.swift */,
+				6B869BFD25A083190068BFD2 /* CardViewController.xib */,
+				6B7129812599E532001A54E9 /* NaverMap.storyboard */,
+				6B7129842599E5A5001A54E9 /* NMapViewController.swift */,
+			);
+			path = "NMap+Card";
 			sourceTree = "<group>";
 		};
 		F25FD7D631019A0423B4D773 /* Pods */ = {
@@ -160,7 +180,9 @@
 			files = (
 				6B7129822599E532001A54E9 /* NaverMap.storyboard in Resources */,
 				6B6CA8542599C4C5002B5B21 /* LaunchScreen.storyboard in Resources */,
+				6B869BFF25A083190068BFD2 /* CardViewController.xib in Resources */,
 				6B6CA8512599C4C5002B5B21 /* Assets.xcassets in Resources */,
+				6B869BF725A082520068BFD2 /* NaverTest.storyboard in Resources */,
 				6B6CA84F2599C4C3002B5B21 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,8 +238,10 @@
 			files = (
 				6B6CA84C2599C4C3002B5B21 /* ViewController.swift in Sources */,
 				6B6CA8482599C4C3002B5B21 /* AppDelegate.swift in Sources */,
+				6B869BFE25A083190068BFD2 /* CardViewController.swift in Sources */,
 				6B6CA84A2599C4C3002B5B21 /* SceneDelegate.swift in Sources */,
 				6B7129852599E5A5001A54E9 /* NMapViewController.swift in Sources */,
+				6B869BFA25A082610068BFD2 /* NaverTestVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
