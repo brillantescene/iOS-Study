@@ -11,11 +11,6 @@ import CoreLocation
 
 class NMapViewController: UIViewController, CLLocationManagerDelegate {
 
-    enum CardState {
-        case expanded
-        case collapsed
-    }
-    
     @IBOutlet var mapView: NMFMapView!
     @IBOutlet var myBtn: UIButton!
     @IBOutlet var cardBtn: UIButton!
@@ -30,7 +25,7 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
 //       }
     
     var cardViewController:CardViewController!
-    var visualEffectView:UIVisualEffectView!
+//    var visualEffectView:UIVisualEffectView!
     
     
     let cardHeight:CGFloat = 600
@@ -73,8 +68,8 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func setMap() {
-        myBtn.setImage(UIImage(systemName: "star"), for: UIControl.State.normal)
-        myBtn.setImage(UIImage(systemName: "star.fill"), for: UIControl.State.selected)
+        myBtn.setImage(UIImage(named: "btnCurrentLocation"), for: UIControl.State.normal)
+        myBtn.setImage(UIImage(named: "compassIc"), for: UIControl.State.selected)
         myBtn.addTarget(self, action: #selector(myButtonTapped), for: UIControl.Event.touchUpInside)
 
         
@@ -110,10 +105,13 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
 //        marker.position = NMGLatLng(lat: latitude!, lng: longitude!)
 //        marker.position = NMGLatLng(lat: latitude! + 0.01, lng: longitude! + 0.01)
 //        marker.iconImage = NMFOverlayImage(name: "plus.button")
-//        let locationOverlay = mapView.locationOverlay
+        let locationOverlay = mapView.locationOverlay
 //        locationOverlay.location = NMGLatLng(lat: latitude!, lng: longitude!)
 //        marker.mapView = mapView
+        locationOverlay.icon = NMFOverlayImage(name: "plus.button")
         mapView.positionMode = .direction
+        mapView.locationOverlay.icon = NMFOverlayImage(name: "group511")
+        mapView.locationOverlay.subIcon = NMFOverlayImage(name: "polygon4")
     }
 
     @objc func myButtonTapped(){
@@ -197,17 +195,17 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
             runningAnimations.append(frameAnimator)
             
             
-            let cornerRadiusAnimator = UIViewPropertyAnimator(duration: duration, curve: .linear) {
-                switch state {
-                case .expanded:
-                    self.cardViewController.view.layer.cornerRadius = 12
-                case .collapsed:
-                    self.cardViewController.view.layer.cornerRadius = 0
-                }
-            }
-            
-            cornerRadiusAnimator.startAnimation()
-            runningAnimations.append(cornerRadiusAnimator)
+//            let cornerRadiusAnimator = UIViewPropertyAnimator(duration: duration, curve: .linear) {
+//                switch state {
+//                case .expanded:
+//                    self.cardViewController.view.layer.cornerRadius = 12
+//                case .collapsed:
+//                    self.cardViewController.view.layer.cornerRadius = 0
+//                }
+//            }
+//            
+//            cornerRadiusAnimator.startAnimation()
+//            runningAnimations.append(cornerRadiusAnimator)
             
 //            let blurAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 1) {
 //                switch state {

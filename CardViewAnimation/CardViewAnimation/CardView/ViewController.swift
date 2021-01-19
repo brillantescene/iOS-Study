@@ -20,7 +20,6 @@ class ViewController: UIViewController {
     var cardViewController:CardViewController!
     var visualEffectView:UIVisualEffectView!
     
-    var cardListViewController:CardListViewController!
     
     let cardHeight:CGFloat = 600
     let cardHandleAreaHeight:CGFloat = 65
