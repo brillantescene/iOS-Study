@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ww2-ia-NaV">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Naver Map Test-->
+        <scene sceneID="eQa-oG-veU">
+            <objects>
+                <viewController id="ww2-ia-NaV" customClass="NaverMapTest" customModule="AppJamTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="izw-cP-Exa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TEg-Th-8sd" customClass="NMFMapView">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTc-YK-goE">
+                                <rect key="frame" x="262" y="579" width="82" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <state key="normal" title="direction"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eMZ-WY-GzP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TEg-Th-8sd" firstAttribute="leading" secondItem="eMZ-WY-GzP" secondAttribute="leading" id="Pm4-2g-4Dy"/>
+                            <constraint firstItem="TEg-Th-8sd" firstAttribute="top" secondItem="eMZ-WY-GzP" secondAttribute="top" id="dWX-mJ-dql"/>
+                            <constraint firstItem="eMZ-WY-GzP" firstAttribute="trailing" secondItem="TEg-Th-8sd" secondAttribute="trailing" id="eCw-YP-dW2"/>
+                            <constraint firstItem="eMZ-WY-GzP" firstAttribute="bottom" secondItem="TEg-Th-8sd" secondAttribute="bottom" id="vDc-Tn-3mj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="locationBtn" destination="lTc-YK-goE" id="LgK-7c-9bu"/>
+                        <outlet property="mapView" destination="TEg-Th-8sd" id="cpz-Mb-WbM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pt8-eM-bbF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="119.2" y="103.44827586206897"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
