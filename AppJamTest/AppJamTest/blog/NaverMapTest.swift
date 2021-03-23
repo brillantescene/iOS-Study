@@ -15,7 +15,10 @@ class NaverMapTest: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView.showLegalNotice()
         SetLocationBtn()
+//        mapView.logoAlign = .leftTop
+        mapView.logoMargin = UIEdgeInsets(top: 0, left: 30, bottom: 200, right: 0)
     }
 }
 
