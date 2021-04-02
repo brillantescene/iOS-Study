@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func touchButton(_ sender: UIButton) {
-        if let indexOfSelectedBtn = indexOfOneAndOnlySelectedBtn{
+        if indexOfOneAndOnlySelectedBtn != nil{
             if !sender.isSelected {
                 for unselectIndex in radioButtons.indices {
                     radioButtons[unselectIndex].isSelected = false
