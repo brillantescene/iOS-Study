@@ -14,19 +14,24 @@ class ViewController: UIViewController {
      변수를 lazy로 만들면 누가 사용하기 전까지는 초기화되지 않음.
      제약사항: didSet은 못 씀. 
     */
-    lazy var game = Concentration(numberOfPairsCards: (cardButtons.count + 1) / 2)
-    var flipCount = 0 {
+    private lazy var game = Concentration(numberOfPairsCards: numberOfPairsCards)
+    
+    var numberOfPairsCards: Int { //computed property
+        // 읽기 전용으로 만들 땐 굳이 get이라는 단어를 쓰지 않아도 됨.
+        return (cardButtons.count + 1) / 2
+    }
+    private(set) var flipCount = 0 {
         didSet {
             flipCountLabel.text = "Flips: \(flipCount)"
         }
     }
-    @IBOutlet weak var flipCountLabel: UILabel!
-    @IBOutlet var cardButtons: [UIButton]!
+    @IBOutlet private weak var flipCountLabel: UILabel!
+    @IBOutlet private var cardButtons: [UIButton]!
 
-    var emoijChoices = ["🎃","👻","⚡️","✨","🍎","👀","🎨","🎉","📓"]
-    var emoji = [Int:String]()
+    private var emoijChoices = ["🎃","👻","⚡️","✨","🍎","👀","🎨","🎉","📓"]
+    private var emoji = [Int:String]()
     
-    @IBAction func touchCard(_ sender: UIButton) {
+    @IBAction private func touchCard(_ sender: UIButton) {
         flipCount += 1
         if let cardNumber = cardButtons.firstIndex(of: sender) {
             game.chooseCard(at: cardNumber)
@@ -35,7 +40,7 @@ class ViewController: UIViewController {
             print("Chosen card was not in cardButtons.")
         }
     }
-    func updateViewFromModel() {
+    private func updateViewFromModel() {
         for index in cardButtons.indices {
             let button = cardButtons[index]
             let card = game.cards[index]
@@ -48,24 +53,27 @@ class ViewController: UIViewController {
             }
         }
     }
-    func emoji(for card: Card) -> String {
-        
+    private func emoji(for card: Card) -> String {
         if emoji[card.identifier] == nil, emoijChoices.count > 0 {
-            let randomIndex = Int(arc4random_uniform(UInt32(emoijChoices.count)))
-            emoji[card.identifier] = emoijChoices.remove(at: randomIndex)
+            emoji[card.identifier] = emoijChoices.remove(at: emoijChoices.count.arc4random)
         }
-        /*
-         if emoji[card.identifier] != nil {
-             return emoji[card.identifier]!
-         } else {
-             return "?"
-         }
-         완전 똑같은 의미!
-         return emoji[card.identifier] ?? "?"
-        */
         return emoji[card.identifier] ?? "?"
     }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+}
+
+extension Int {
+    var arc4random: Int {
+        if self > 0 {
+            return Int(arc4random_uniform(UInt32(self)))
+        } else if self < 0 {
+            return -Int(arc4random_uniform(UInt32(abs(self))))
+        } else {
+            return 0
+        }
     }
 }

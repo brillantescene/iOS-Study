@@ -15,9 +15,9 @@ struct Card {
     var identifier: Int
     
     // 이건 타입과 저장됨
-    static var identifierFactory = 0
+    private static var identifierFactory = 0
     
-    static func getUniqueIdentifier() -> Int {
+    private static func getUniqueIdentifier() -> Int {
         // 정적 메소드 안이어서 Card. 없이도 정적 변수에 접근 가능
         identifierFactory += 1
         return identifierFactory
