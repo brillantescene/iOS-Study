@@ -7,12 +7,16 @@
 
 import Foundation
 
-struct Card {
+struct Card: Hashable {
     
+    var hashValue: Int { return identifier }
+    static func ==(lhs: Card, rhs: Card) -> Bool {
+        return lhs.identifier == rhs.identifier
+    }
     // 얘네는 각 개개의 카드들과 저장되지만
     var isFaceUp = false
     var isMatched = false
-    var identifier: Int
+    private var identifier: Int
     
     // 이건 타입과 저장됨
     private static var identifierFactory = 0

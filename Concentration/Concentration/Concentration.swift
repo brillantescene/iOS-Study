@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Concentration {
+struct Concentration {
     private(set) var cards = [Card]()
     
     private var indexOfOneAndOnlyFaceUpCard: Int? { //computed property
@@ -33,13 +33,13 @@ class Concentration {
         }
     }
     
-    func chooseCard(at index: Int) {
+    mutating func chooseCard(at index: Int) {
         // assert - API를 부적절한 사용으로부터 보호
         assert(cards.indices.contains(index), "Concentraion.chooseCard(at: \(index)): chosen index not in the cards.")
         if !cards[index].isMatched {
             if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index {
                 // check if cards match
-                if cards[matchIndex].identifier == cards[index].identifier {
+                if cards[matchIndex] == cards[index] {
                     cards[matchIndex].isMatched = true
                     cards[index].isMatched = true
                 }
