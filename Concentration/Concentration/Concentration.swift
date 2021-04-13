@@ -12,17 +12,21 @@ struct Concentration {
     
     private var indexOfOneAndOnlyFaceUpCard: Int? { //computed property
         get {
-            var foundIndex: Int? // 앞면인 카드를 모두 찾고, 찾았다면 그 카드를 넣어줌
-            for index in cards.indices {
-                if cards[index].isFaceUp { // 앞면을 찾으면
-                    if foundIndex == nil {
-                        foundIndex = index
-                    } else {
-                        return nil
-                    }
-                }
-            }
-            return foundIndex
+            // 인덱스 살펴보고 카드가 앞면인지 검사. 앞면이면 true
+            // faceUpCardIndices는 배열의 인덱스를 담고 있는 배열임
+            return cards.indices.filter { cards[$0].isFaceUp }.oneAndOnly
+            
+//            var foundIndex: Int? // 앞면인 카드를 모두 찾고, 찾았다면 그 카드를 넣어줌
+//            for index in cards.indices {
+//                if cards[index].isFaceUp { // 앞면을 찾으면
+//                    if foundIndex == nil {
+//                        foundIndex = index
+//                    } else {
+//                        return nil
+//                    }
+//                }
+//            }
+//            return foundIndex
         }
         set { // 모든 카드를 살펴본 후 여기 해당하는 카드 빼고 모두 뒷면으로 놓기
             for index in cards.indices {
@@ -66,5 +70,13 @@ struct Concentration {
             cards += [card, card]
         }
         // TODO: Shuffle the cards
+    }
+}
+
+extension Collection {
+    // Element: 그 안에 있는 것의 타입이 됨. Element는 배열에서 플레이스 홀더 같은 개념.
+    // 유일한 한 가지 요소가 있을 때 return first. 요소가 여러개면 return nil
+    var oneAndOnly: Element? {
+        return count == 1 ? first : nil
     }
 }
