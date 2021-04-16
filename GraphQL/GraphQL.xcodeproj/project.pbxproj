@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,9 @@
 		6B89E2512619DB9B00D62787 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B89E24F2619DB9B00D62787 /* Main.storyboard */; };
 		6B89E2532619DB9C00D62787 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B89E2522619DB9C00D62787 /* Assets.xcassets */; };
 		6B89E2562619DB9C00D62787 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B89E2542619DB9C00D62787 /* LaunchScreen.storyboard */; };
+		6B89E26E2619E10B00D62787 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B89E26D2619E10B00D62787 /* schema.json */; };
+		6B89E2712619E13C00D62787 /* LaunchList.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 6B89E2702619E13C00D62787 /* LaunchList.graphql */; };
+		8DB4E1052A008A62B37C1ED1 /* Pods_GraphQL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB4322601FDC79264CC9B0A /* Pods_GraphQL.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,11 @@
 		6B89E2522619DB9C00D62787 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B89E2552619DB9C00D62787 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6B89E2572619DB9C00D62787 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B89E26D2619E10B00D62787 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		6B89E2702619E13C00D62787 /* LaunchList.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = LaunchList.graphql; sourceTree = "<group>"; };
+		ABB4322601FDC79264CC9B0A /* Pods_GraphQL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GraphQL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC42A263D245D2069ABA7E2C /* Pods-GraphQL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraphQL.debug.xcconfig"; path = "Target Support Files/Pods-GraphQL/Pods-GraphQL.debug.xcconfig"; sourceTree = "<group>"; };
+		F41ABF595D375A3CA4C0D6D5 /* Pods-GraphQL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraphQL.release.xcconfig"; path = "Target Support Files/Pods-GraphQL/Pods-GraphQL.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DB4E1052A008A62B37C1ED1 /* Pods_GraphQL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +51,8 @@
 			children = (
 				6B89E2482619DB9B00D62787 /* GraphQL */,
 				6B89E2472619DB9B00D62787 /* Products */,
+				99D9529AD42E18EC7279BE7A /* Pods */,
+				AD59FB345C0147FE7FF0F1D0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +69,32 @@
 			children = (
 				6B89E2492619DB9B00D62787 /* AppDelegate.swift */,
 				6B89E24B2619DB9B00D62787 /* SceneDelegate.swift */,
+				6B89E2702619E13C00D62787 /* LaunchList.graphql */,
 				6B89E24D2619DB9B00D62787 /* ViewController.swift */,
 				6B89E24F2619DB9B00D62787 /* Main.storyboard */,
 				6B89E2522619DB9C00D62787 /* Assets.xcassets */,
+				6B89E26D2619E10B00D62787 /* schema.json */,
 				6B89E2542619DB9C00D62787 /* LaunchScreen.storyboard */,
 				6B89E2572619DB9C00D62787 /* Info.plist */,
 			);
 			path = GraphQL;
+			sourceTree = "<group>";
+		};
+		99D9529AD42E18EC7279BE7A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AC42A263D245D2069ABA7E2C /* Pods-GraphQL.debug.xcconfig */,
+				F41ABF595D375A3CA4C0D6D5 /* Pods-GraphQL.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AD59FB345C0147FE7FF0F1D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ABB4322601FDC79264CC9B0A /* Pods_GraphQL.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +104,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6B89E25A2619DB9C00D62787 /* Build configuration list for PBXNativeTarget "GraphQL" */;
 			buildPhases = (
+				E4301FC62BC49EE1A3A6B18A /* [CP] Check Pods Manifest.lock */,
 				6B89E2422619DB9B00D62787 /* Sources */,
 				6B89E2432619DB9B00D62787 /* Frameworks */,
 				6B89E2442619DB9B00D62787 /* Resources */,
+				2744DB34029479D2315A77F8 /* [CP] Embed Pods Frameworks */,
+				6B89E2732619E17700D62787 /* Generate Apollo GraphQL API */,
 			);
 			buildRules = (
 			);
@@ -124,13 +157,77 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B89E26E2619E10B00D62787 /* schema.json in Resources */,
 				6B89E2562619DB9C00D62787 /* LaunchScreen.storyboard in Resources */,
 				6B89E2532619DB9C00D62787 /* Assets.xcassets in Resources */,
 				6B89E2512619DB9B00D62787 /* Main.storyboard in Resources */,
+				6B89E2712619E13C00D62787 /* LaunchList.graphql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2744DB34029479D2315A77F8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GraphQL/Pods-GraphQL-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GraphQL/Pods-GraphQL-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GraphQL/Pods-GraphQL-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6B89E2732619E17700D62787 /* Generate Apollo GraphQL API */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/$(TARGET_NAME)/*.graphql",
+			);
+			name = "Generate Apollo GraphQL API";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/$(TARGET_NAME)/API.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "SCRIPT_PATH=\"${PODS_ROOT}/Apollo/scripts\"\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"../../schema.json\" GraphQL/API\n";
+		};
+		E4301FC62BC49EE1A3A6B18A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GraphQL-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6B89E2422619DB9B00D62787 /* Sources */ = {
@@ -283,6 +380,7 @@
 		};
 		6B89E25B2619DB9C00D62787 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC42A263D245D2069ABA7E2C /* Pods-GraphQL.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -301,6 +399,7 @@
 		};
 		6B89E25C2619DB9C00D62787 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F41ABF595D375A3CA4C0D6D5 /* Pods-GraphQL.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
