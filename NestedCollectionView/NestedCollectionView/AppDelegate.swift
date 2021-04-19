@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  CollectionViewTest
+//  NestedCollectionView
 //
-//  Created by ✨EUGENE✨ on 2021/04/15.
+//  Created by ✨EUGENE✨ on 2021/04/18.
 //
 
 import UIKit
