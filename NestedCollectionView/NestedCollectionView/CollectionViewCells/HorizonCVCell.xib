@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,8 +21,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YhS-Hs-alb">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="220"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="QmZ-LF-SVa">
-                                <rect key="frame" x="0.0" y="30" width="390" height="190"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="QmZ-LF-SVa">
+                                <rect key="frame" x="0.0" y="50" width="390" height="140"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UDq-K9-lIb">
                                     <size key="itemSize" width="128" height="128"/>
@@ -31,22 +32,38 @@
                                 </collectionViewFlowLayout>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="QmZ-LF-SVa" secondAttribute="trailing" id="1cP-uG-mZo"/>
-                            <constraint firstAttribute="bottom" secondItem="QmZ-LF-SVa" secondAttribute="bottom" id="U1c-2s-L4z"/>
-                            <constraint firstItem="QmZ-LF-SVa" firstAttribute="top" secondItem="YhS-Hs-alb" secondAttribute="top" constant="30" id="Y9e-Xd-ary"/>
+                            <constraint firstAttribute="bottom" secondItem="QmZ-LF-SVa" secondAttribute="bottom" constant="30" id="U1c-2s-L4z"/>
                             <constraint firstItem="QmZ-LF-SVa" firstAttribute="leading" secondItem="YhS-Hs-alb" secondAttribute="leading" id="aF1-bq-Io5"/>
                         </constraints>
                     </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="유슙님의 영화 로그" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aN-uD-06f">
+                        <rect key="frame" x="16" y="15" width="127" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b0j-y5-Icu">
+                        <rect key="frame" x="360" y="14" width="20" height="22"/>
+                        <state key="normal">
+                            <imageReference key="image" image="arrow.right" catalog="system" renderingMode="original"/>
+                        </state>
+                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="YhS-Hs-alb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="7uN-ag-Tfp"/>
+                <constraint firstAttribute="trailing" secondItem="b0j-y5-Icu" secondAttribute="trailing" constant="10" id="KTW-Et-fi9"/>
+                <constraint firstItem="QmZ-LF-SVa" firstAttribute="top" secondItem="3aN-uD-06f" secondAttribute="bottom" constant="14" id="R6v-nj-KlS"/>
                 <constraint firstItem="YhS-Hs-alb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="SN5-lA-fhA"/>
+                <constraint firstItem="3aN-uD-06f" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="Wel-tU-Dbb"/>
                 <constraint firstAttribute="bottom" secondItem="YhS-Hs-alb" secondAttribute="bottom" id="fsp-7q-qyZ"/>
+                <constraint firstItem="b0j-y5-Icu" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="14" id="gdH-gp-FSb"/>
+                <constraint firstItem="3aN-uD-06f" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="mAg-Cm-wn8"/>
                 <constraint firstAttribute="trailing" secondItem="YhS-Hs-alb" secondAttribute="trailing" id="nj8-rU-661"/>
+                <constraint firstItem="QmZ-LF-SVa" firstAttribute="top" secondItem="b0j-y5-Icu" secondAttribute="bottom" constant="14" id="tko-kF-59X"/>
             </constraints>
             <size key="customSize" width="390" height="152"/>
             <connections>
@@ -56,11 +73,9 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="arrow.right" catalog="system" width="128" height="98"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

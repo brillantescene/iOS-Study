@@ -22,10 +22,6 @@ class ViewController: UIViewController {
         let collectionViewHorizonNNib = UINib(nibName: "HoriNrrwCVCell", bundle: nil)
         collectionView.register(collectionViewHorizonNNib, forCellWithReuseIdentifier: "HoriNrrwCVCell")
         
-        let collectionViewTitleNib = UINib(nibName: "TitleCRView", bundle: nil)
-        collectionView.register(collectionViewTitleNib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "TitleCRView")
-        let collectionViewWideNib = UINib(nibName: "WideCVCell", bundle: nil)
-        collectionView.register(collectionViewWideNib, forCellWithReuseIdentifier: "WideCVCell")
         collectionView.dataSource = self
         collectionView.delegate = self
     }
@@ -40,18 +36,10 @@ extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
      }
-//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//        switch kind {
-//        case UICollectionView.elementKindSectionHeader:
-//            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: TitleCRView.identifier, for: indexPath)
-//            return headerView
-//        default: assert(false, "응 아니야")
-//        }
-//    }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if indexPath.section == 0 {
+        if indexPath.section == 0{
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HorizonCVCell.identifier, for: indexPath) as? HorizonCVCell else {
                 return UICollectionViewCell()
             }

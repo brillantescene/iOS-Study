@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,8 +18,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="390" height="220"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="tkH-1l-Pgh">
-                        <rect key="frame" x="0.0" y="30" width="390" height="190"/>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="tkH-1l-Pgh">
+                        <rect key="frame" x="0.0" y="50" width="390" height="170"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Iy1-po-0ze">
                             <size key="itemSize" width="128" height="128"/>
@@ -27,22 +28,40 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                     </collectionView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="볼래요 로그" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="abK-Fd-a1c">
+                        <rect key="frame" x="16" y="15" width="78" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mD9-PD-rQ0">
+                        <rect key="frame" x="360" y="14" width="20" height="22"/>
+                        <state key="normal">
+                            <imageReference key="image" image="arrow.right" catalog="system" renderingMode="original"/>
+                        </state>
+                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="tkH-1l-Pgh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="30" id="7jt-F6-o6K"/>
+                <constraint firstItem="tkH-1l-Pgh" firstAttribute="top" secondItem="mD9-PD-rQ0" secondAttribute="bottom" constant="14" id="2SX-kZ-WLw"/>
+                <constraint firstAttribute="trailing" secondItem="mD9-PD-rQ0" secondAttribute="trailing" constant="10" id="2iJ-Pl-wxM"/>
+                <constraint firstItem="mD9-PD-rQ0" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="14" id="8qu-TW-QEM"/>
+                <constraint firstItem="abK-Fd-a1c" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="IJJ-Jb-8LX"/>
                 <constraint firstItem="tkH-1l-Pgh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="IY8-vD-xbj"/>
+                <constraint firstItem="tkH-1l-Pgh" firstAttribute="top" secondItem="abK-Fd-a1c" secondAttribute="bottom" constant="14" id="KXh-HD-HH6"/>
                 <constraint firstAttribute="trailing" secondItem="tkH-1l-Pgh" secondAttribute="trailing" id="MIA-09-udR"/>
                 <constraint firstAttribute="bottom" secondItem="tkH-1l-Pgh" secondAttribute="bottom" id="Sk7-aQ-MWP"/>
+                <constraint firstItem="abK-Fd-a1c" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="whP-a3-8db"/>
             </constraints>
             <connections>
                 <outlet property="innerCollectionView" destination="tkH-1l-Pgh" id="ahb-yR-gFh"/>
             </connections>
-            <point key="canvasLocation" x="133" y="76"/>
+            <point key="canvasLocation" x="131.8840579710145" y="75"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="arrow.right" catalog="system" width="128" height="98"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
