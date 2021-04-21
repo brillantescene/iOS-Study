@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol CVCellDelegate {
+    func selectedCVCell(_ index: Int)
+}
+
 class TableViewCell: UITableViewCell {
 
     static let identifier = "TableViewCell"
+    
+    var delegate: CVCellDelegate?
     
     let horizonInset: CGFloat = 20
     let lineSpacing: CGFloat = 10
@@ -59,5 +65,12 @@ extension TableViewCell: UICollectionViewDelegateFlowLayout {
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: horizonInset, bottom: 0, right: horizonInset)
+    }
+}
+extension TableViewCell: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let delegate = delegate {
+            delegate.selectedCVCell(indexPath.item)
+        }
     }
 }

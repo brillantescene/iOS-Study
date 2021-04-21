@@ -18,7 +18,6 @@ class ViewController: UIViewController {
         tableView.register(tableViewNib, forCellReuseIdentifier: "TableViewCell")
         
         tableView.dataSource = self
-        tableView.delegate = self
     }
     
 }
@@ -32,6 +31,20 @@ extension ViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         cell.setCell()
+        cell.delegate = self
         return cell
+    }
+}
+extension ViewController: CVCellDelegate {
+    func selectedCVCell(_ index: Int) {
+        guard let vc = UIStoryboard(name: "PopUpView", bundle: nil).instantiateViewController(withIdentifier: "PopUpVC") as? PopUpVC else {
+            return
+        }
+        
+        vc.cellNum = "\(index)번째 셀"
+        
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        present(vc, animated: true, completion: nil)
     }
 }
