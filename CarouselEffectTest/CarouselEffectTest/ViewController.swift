@@ -39,10 +39,11 @@ class ViewController: UIViewController {
 //        layout.itemSize = CGSize(width: collectionView.frame.size.width*0.796, height: collectionView.frame.size.height)
         layout.itemSize = CGSize(width: 200, height: 200)
         layout.sideItemScale = 0.8
-        layout.spacing = 10
+        layout.spacing = 20
         layout.isPagingEnabled = true
         
         collectionView.collectionViewLayout = layout
+        collectionView.layer.masksToBounds = false
         
         let nib = UINib(nibName: "CollectionViewCell", bundle: nil)
         self.collectionView?.register(nib, forCellWithReuseIdentifier: "CollectionViewCell")
@@ -66,6 +67,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.identifier, for: indexPath) as! CollectionViewCell
         cell.setCell(imageNames[indexPath.row])
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "index"), object: imageNames[indexPath.row])
+        cell.layer.masksToBounds = false
         return cell
     }
 }

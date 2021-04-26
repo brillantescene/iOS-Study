@@ -53,8 +53,11 @@ class CarouselLayout: UICollectionViewFlowLayout {
         let xInset = (collectionViewSize.width - self.itemSize.width) / 2
         let yInset = (collectionViewSize.height - self.itemSize.height) / 2
         
-        self.sectionInset = UIEdgeInsets(top: yInset, left: xInset, bottom: yInset, right: xInset)
+        print("collectionViewSize.width \(collectionViewSize.width) self.itemSize.width \(self.itemSize.width)")
+        print("collectionViewSize.height \(collectionViewSize.height) self.itemSize.height \(self.itemSize.height)")
         
+        self.sectionInset = UIEdgeInsets(top: yInset, left: xInset, bottom: yInset, right: xInset)
+//        self.sectionInset = UIEdgeInsets(top: 0, left: xInset, bottom: 0, right: xInset)
         let itemWidth = self.itemSize.width
         
         let scaledItemOffset =  (itemWidth - itemWidth*self.sideItemScale) / 2
