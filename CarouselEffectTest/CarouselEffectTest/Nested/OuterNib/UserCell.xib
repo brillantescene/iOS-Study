@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UserCell" id="gTV-IL-0wX" customClass="UserCell" customModule="CarouselEffectTest" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="153"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="153"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vincenzo" translatesAutoresizingMaskIntoConstraints="NO" id="Ti6-Tb-CJf">
+                        <rect key="frame" x="27" y="14" width="37" height="37"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="Ti6-Tb-CJf" secondAttribute="height" multiplier="1:1" id="S6g-pe-AYq"/>
+                            <constraint firstAttribute="height" constant="37" id="lMZ-R9-eFW"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Esk-2x-EKU">
+                        <rect key="frame" x="19.999999999999993" y="74" width="100.33333333333331" height="58"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="58" id="17l-Im-hdM"/>
+                        </constraints>
+                        <string key="text">유경 님의 
+토마토 로그</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHw-B6-S75">
+                        <rect key="frame" x="307" y="8" width="48" height="48"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="hHw-B6-S75" secondAttribute="height" multiplier="1:1" id="6Sw-eZ-XM4"/>
+                            <constraint firstAttribute="height" constant="48" id="MpS-r9-DpP"/>
+                        </constraints>
+                        <state key="normal" image="btnSetting"/>
+                    </button>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="Esk-2x-EKU" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="7z1-fu-Nbt"/>
+                <constraint firstItem="Esk-2x-EKU" firstAttribute="top" secondItem="Ti6-Tb-CJf" secondAttribute="bottom" constant="23" id="Usv-Jl-4at"/>
+                <constraint firstAttribute="trailing" secondItem="hHw-B6-S75" secondAttribute="trailing" constant="20" id="fzl-OD-YoM"/>
+                <constraint firstItem="hHw-B6-S75" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="jKx-P5-tqP"/>
+                <constraint firstItem="Ti6-Tb-CJf" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="14" id="jR3-DA-Xhy"/>
+                <constraint firstAttribute="bottom" secondItem="Esk-2x-EKU" secondAttribute="bottom" constant="21" id="tI2-OS-0JP"/>
+                <constraint firstItem="Ti6-Tb-CJf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="27" id="vi6-4O-I35"/>
+            </constraints>
+            <connections>
+                <outlet property="profileImage" destination="Ti6-Tb-CJf" id="9IJ-cf-aYv"/>
+            </connections>
+            <point key="canvasLocation" x="82.400000000000006" y="74.630541871921181"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="btnSetting" width="48" height="48"/>
+        <image name="vincenzo" width="640" height="916"/>
+    </resources>
+</document>
