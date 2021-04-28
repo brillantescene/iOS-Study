@@ -17,7 +17,7 @@ class TomatoInnerCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setShadow()
+//        setShadow()
         
     }
     func setShadow() {

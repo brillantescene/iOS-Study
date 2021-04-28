@@ -19,7 +19,7 @@ class TomatoCell: UICollectionViewCell {
     let cellCount = 8
     var currentIndex: CGFloat = 0
 
-    var imageNames = ["blue", "trxye", "wild", "mymymy", "bloom"]
+    var imageNames = ["blue", "trxye", "wild", "mymymy", "bloom", "nevernot", "paris", "feelings", "imfeeling", "superhero"]
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -59,13 +59,14 @@ extension TomatoCell: UICollectionViewDelegate, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 5
+        return imageNames.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TomatoInnerCell.identifier, for: indexPath) as! TomatoInnerCell
         cell.setCell(imageNames[indexPath.row])
 //        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "index"), object: imageNames[indexPath.row])
+        cell.setShadow()
         cell.layer.masksToBounds = false
         return cell
     }

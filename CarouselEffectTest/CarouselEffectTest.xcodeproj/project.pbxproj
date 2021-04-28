@@ -19,7 +19,7 @@
 		6B910DF426366CAE002603E1 /* WantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B910DF226366CAE002603E1 /* WantCell.xib */; };
 		6BABE72426366FA4000E2804 /* TomatoInnerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BABE72226366FA4000E2804 /* TomatoInnerCell.swift */; };
 		6BABE72526366FA4000E2804 /* TomatoInnerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BABE72326366FA4000E2804 /* TomatoInnerCell.xib */; };
-		6BABE72A263671C4000E2804 /* Extension+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BABE729263671C4000E2804 /* Extension+Shadow.swift */; };
+		6BABE72A263671C4000E2804 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BABE729263671C4000E2804 /* Extension.swift */; };
 		6BC73F7F2632703900D87A7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC73F7E2632703900D87A7E /* AppDelegate.swift */; };
 		6BC73F812632703900D87A7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC73F802632703900D87A7E /* SceneDelegate.swift */; };
 		6BC73F832632703900D87A7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC73F822632703900D87A7E /* ViewController.swift */; };
@@ -44,7 +44,7 @@
 		6B910DF226366CAE002603E1 /* WantCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WantCell.xib; sourceTree = "<group>"; };
 		6BABE72226366FA4000E2804 /* TomatoInnerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TomatoInnerCell.swift; sourceTree = "<group>"; };
 		6BABE72326366FA4000E2804 /* TomatoInnerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TomatoInnerCell.xib; sourceTree = "<group>"; };
-		6BABE729263671C4000E2804 /* Extension+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Shadow.swift"; sourceTree = "<group>"; };
+		6BABE729263671C4000E2804 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		6BC73F7B2632703900D87A7E /* CarouselEffectTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarouselEffectTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BC73F7E2632703900D87A7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BC73F802632703900D87A7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -135,7 +135,7 @@
 		6BC73F7D2632703900D87A7E /* CarouselEffectTest */ = {
 			isa = PBXGroup;
 			children = (
-				6BABE729263671C4000E2804 /* Extension+Shadow.swift */,
+				6BABE729263671C4000E2804 /* Extension.swift */,
 				6BC73F7E2632703900D87A7E /* AppDelegate.swift */,
 				6BC73F802632703900D87A7E /* SceneDelegate.swift */,
 				6B910DE926366C4A002603E1 /* Nested */,
@@ -227,7 +227,7 @@
 				6B910DED26366C76002603E1 /* TomatoCell.swift in Sources */,
 				6BC73F9926327D2B00D87A7E /* CarouselLayout.swift in Sources */,
 				6BABE72426366FA4000E2804 /* TomatoInnerCell.swift in Sources */,
-				6BABE72A263671C4000E2804 /* Extension+Shadow.swift in Sources */,
+				6BABE72A263671C4000E2804 /* Extension.swift in Sources */,
 				6B41E409263800570051A3AC /* HeaderCell.swift in Sources */,
 				6B910DDF26365F86002603E1 /* HomeVC.swift in Sources */,
 				6B910DF326366CAE002603E1 /* WantCell.swift in Sources */,

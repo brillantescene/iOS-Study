@@ -61,6 +61,7 @@ extension HomeVC: UICollectionViewDataSource {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UserCell.identifier, for: indexPath) as? UserCell else {
                 return UICollectionViewCell()
             }
+            cell.setUserName("유진")
             return cell
         case 1:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TomatoCell.identifier, for: indexPath) as? TomatoCell else {
