@@ -73,7 +73,6 @@
 			isa = PBXGroup;
 			children = (
 				6BC73F822632703900D87A7E /* ViewController.swift */,
-				6BC73F9826327D2B00D87A7E /* CarouselLayout.swift */,
 				6BC73F93263275C600D87A7E /* CollectionViewCell.swift */,
 				6BC73F94263275C600D87A7E /* CollectionViewCell.xib */,
 				6BC73F842632703900D87A7E /* Main.storyboard */,
@@ -138,6 +137,7 @@
 				6BABE729263671C4000E2804 /* Extension.swift */,
 				6BC73F7E2632703900D87A7E /* AppDelegate.swift */,
 				6BC73F802632703900D87A7E /* SceneDelegate.swift */,
+				6BC73F9826327D2B00D87A7E /* CarouselLayout.swift */,
 				6B910DE926366C4A002603E1 /* Nested */,
 				6B910DDC26365F56002603E1 /* PlainCarousel */,
 				6BC73F872632703C00D87A7E /* Assets.xcassets */,

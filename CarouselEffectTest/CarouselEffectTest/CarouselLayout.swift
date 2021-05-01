@@ -45,6 +45,7 @@ class CarouselLayout: UICollectionViewFlowLayout {
 
             return CGPoint(x: proposedContentOffset.x + offsetAdjustment, y: proposedContentOffset.y)
         }
+    
     private func setupLayout() {
         guard let collectionView = self.collectionView else {return}
                 
@@ -55,9 +56,9 @@ class CarouselLayout: UICollectionViewFlowLayout {
         
         print("collectionViewSize.width \(collectionViewSize.width) self.itemSize.width \(self.itemSize.width)")
         print("collectionViewSize.height \(collectionViewSize.height) self.itemSize.height \(self.itemSize.height)")
+        print("xInset \(xInset) yInset \(yInset)")
         
         self.sectionInset = UIEdgeInsets(top: yInset, left: xInset, bottom: yInset, right: xInset)
-//        self.sectionInset = UIEdgeInsets(top: 0, left: xInset, bottom: 0, right: xInset)
         let itemWidth = self.itemSize.width
         
         let scaledItemOffset =  (itemWidth - itemWidth*self.sideItemScale) / 2
@@ -88,11 +89,11 @@ class CarouselLayout: UICollectionViewFlowLayout {
         
         let maxDistance = self.itemSize.width + self.minimumLineSpacing
         let distance = min(abs(collectionCenter - center), maxDistance)
-
-        let ratio = (maxDistance - distance)/maxDistance
-
-        let scale = ratio * (1 - self.sideItemScale) + self.sideItemScale
         
+        let ratio = (maxDistance - distance)/maxDistance
+        
+        let scale = ratio * (1 - self.sideItemScale) + self.sideItemScale
+        print("\(scale)")
         let visibleRect = CGRect(origin: collectionView.contentOffset, size: collectionView.bounds.size)
         let dist = attributes.frame.midX - visibleRect.midX
         var transform = CATransform3DScale(CATransform3DIdentity, scale, scale, 1)

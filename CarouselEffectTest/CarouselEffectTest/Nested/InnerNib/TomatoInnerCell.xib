@@ -10,14 +10,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TomatoInnerCell" customModule="CarouselEffectTest" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="154" height="205"/>
+            <rect key="frame" x="0.0" y="0.0" width="174" height="230"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="154" height="205"/>
+                <rect key="frame" x="0.0" y="0.0" width="174" height="230"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s5y-K5-vgn">
-                        <rect key="frame" x="0.0" y="20" width="154" height="185"/>
+                        <rect key="frame" x="0.0" y="20" width="174" height="210"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rak-KB-6Ek">
@@ -27,7 +27,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bPx-Fw-5X9">
-                        <rect key="frame" x="21" y="0.0" width="112" height="161"/>
+                        <rect key="frame" x="31" y="0.0" width="112" height="161"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="161" id="3AX-as-5ai"/>
                             <constraint firstAttribute="width" secondItem="bPx-Fw-5X9" secondAttribute="height" multiplier="16:23" id="BGi-SH-QAU"/>
@@ -46,13 +46,13 @@
                 <constraint firstItem="bPx-Fw-5X9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="i69-fR-xYD"/>
                 <constraint firstAttribute="trailing" secondItem="s5y-K5-vgn" secondAttribute="trailing" id="jxR-u6-fxz"/>
             </constraints>
-            <size key="customSize" width="198" height="204"/>
+            <size key="customSize" width="218" height="229"/>
             <connections>
                 <outlet property="albumNameLabel" destination="Rak-KB-6Ek" id="FvX-9z-mBC"/>
                 <outlet property="imageView" destination="bPx-Fw-5X9" id="pkx-gg-rBI"/>
                 <outlet property="view" destination="s5y-K5-vgn" id="hgC-GS-Gdx"/>
             </connections>
-            <point key="canvasLocation" x="-94.20289855072464" y="142.96875"/>
+            <point key="canvasLocation" x="-79.710144927536234" y="134.59821428571428"/>
         </collectionViewCell>
     </objects>
 </document>
