@@ -17,6 +17,9 @@
 		6BA25290263E531200298816 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 6BA2528F263E531200298816 /* Then */; };
 		6BA25292263FA4C300298816 /* TomatoCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA25291263FA4C300298816 /* TomatoCVCell.swift */; };
 		6BA25294263FD69A00298816 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA25293263FD69A00298816 /* MainView.swift */; };
+		6BB33A752641444300101EA3 /* CarouselLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB33A742641444300101EA3 /* CarouselLayout.swift */; };
+		6BB33A77264146F100101EA3 /* TomatoInnerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB33A76264146F100101EA3 /* TomatoInnerCell.swift */; };
+		6BB33A7926414B8F00101EA3 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB33A7826414B8F00101EA3 /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		6BA25285263D288600298816 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BA25291263FA4C300298816 /* TomatoCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TomatoCVCell.swift; sourceTree = "<group>"; };
 		6BA25293263FD69A00298816 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		6BB33A742641444300101EA3 /* CarouselLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CarouselLayout.swift; path = ../../CarouselEffectTest/CarouselEffectTest/CarouselLayout.swift; sourceTree = "<group>"; };
+		6BB33A76264146F100101EA3 /* TomatoInnerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TomatoInnerCell.swift; sourceTree = "<group>"; };
+		6BB33A7826414B8F00101EA3 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +74,10 @@
 				6BA25279263D288300298816 /* SceneDelegate.swift */,
 				6BA2527B263D288300298816 /* ViewController.swift */,
 				6BA25293263FD69A00298816 /* MainView.swift */,
+				6BB33A7826414B8F00101EA3 /* Extension.swift */,
 				6BA25291263FA4C300298816 /* TomatoCVCell.swift */,
+				6BB33A76264146F100101EA3 /* TomatoInnerCell.swift */,
+				6BB33A742641444300101EA3 /* CarouselLayout.swift */,
 				6BA2527D263D288300298816 /* Main.storyboard */,
 				6BA25280263D288600298816 /* Assets.xcassets */,
 				6BA25282263D288600298816 /* LaunchScreen.storyboard */,
@@ -156,10 +165,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BA2527C263D288300298816 /* ViewController.swift in Sources */,
+				6BB33A752641444300101EA3 /* CarouselLayout.swift in Sources */,
 				6BA25278263D288300298816 /* AppDelegate.swift in Sources */,
+				6BB33A77264146F100101EA3 /* TomatoInnerCell.swift in Sources */,
 				6BA25292263FA4C300298816 /* TomatoCVCell.swift in Sources */,
 				6BA25294263FD69A00298816 /* MainView.swift in Sources */,
 				6BA2527A263D288300298816 /* SceneDelegate.swift in Sources */,
+				6BB33A7926414B8F00101EA3 /* Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     let profileImageView = UIImageView().then {
         $0.image = UIImage(named: "blue")
         $0.contentMode = .scaleAspectFill
-        $0.layer.cornerRadius = $0.frame.height / 2
+//        $0.layer.cornerRadius = $0.frame.height / 2
     }
     let logLabel = UILabel().then {
         $0.text = "유진 님의\n토마토 로그"
@@ -32,10 +32,6 @@ class ViewController: UIViewController {
         $0.contentMode = .scaleAspectFill
         $0.layer.cornerRadius = $0.frame.height / 2
     }
-//    let collectionView = UICollectionView().then {
-//        $0.register(TomatoCVCell.self, forCellWithReuseIdentifier: TomatoCVCell.identifier)
-//        $0.backgroundColor = .orange
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,13 +45,14 @@ class ViewController: UIViewController {
 }
 extension ViewController {
     private func setUpCollectionView() {
+        let safeArea = view.safeAreaLayoutGuide
         mainView.collectionView.delegate = self
         mainView.collectionView.dataSource = self
         mainView.collectionView.register(TomatoCVCell.self, forCellWithReuseIdentifier: TomatoCVCell.identifier)
         mainView.collectionView.snp.makeConstraints {
             $0.top.equalTo(tomatoImageView.snp.bottom)
             $0.left.right.equalToSuperview()
-            $0.height.equalTo(200)
+            $0.bottom.equalTo(safeArea)
         }
     }
     private func setView() {
@@ -79,6 +76,9 @@ extension ViewController {
             $0.centerX.equalTo(safeArea)
             $0.size.equalTo(CGSize(width: 125, height: 125))
         }
+        
+        profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
+        tomatoImageView.layer.cornerRadius = tomatoImageView.frame.height / 2
     }
     func setLabel() {
         let fontSize = UIFont.boldSystemFont(ofSize: 22)
@@ -88,8 +88,11 @@ extension ViewController {
     }
 }
 extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -100,8 +103,12 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFl
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (view.frame.width / 3), height: collectionView.frame.height)
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10 }
+        return 0 }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0 }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0) }
 }
