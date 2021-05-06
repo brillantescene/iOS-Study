@@ -10,17 +10,26 @@ import UIKit
 class HomeVC: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var nickNameLabel: UILabel!
+    @IBOutlet weak var profileImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout // casting is required because UICollectionViewLayout doesn't offer header pin. Its feature of UICollectionViewFlowLayout
+        let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout
+        
         layout?.sectionHeadersPinToVisibleBounds = true
         
+        profileImage.layer.cornerRadius = profileImage.frame.height / 2
+        
+        let attributedString = NSMutableAttributedString()
+            .bold("유진 ", fontSize: 22)
+            .normal("님의\n토마토 로그", fontSize: 22)
+        nickNameLabel.attributedText = attributedString
+        nickNameLabel.numberOfLines = 2
 //        let headerNib = UINib(nibName: "HeaderCell", bundle: nil)
 //        self.collectionView?.register(headerNib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCell.identifier)
         
-        let userNib = UINib(nibName: "UserCell", bundle: nil)
-        self.collectionView?.register(userNib, forCellWithReuseIdentifier: "UserCell")
+
         let tomatoNib = UINib(nibName: "TomatoCell", bundle: nil)
         self.collectionView?.register(tomatoNib, forCellWithReuseIdentifier: "TomatoCell")
         
@@ -34,7 +43,7 @@ class HomeVC: UIViewController {
 extension HomeVC: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 3
+        return 2
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
@@ -56,23 +65,18 @@ extension HomeVC: UICollectionViewDataSource {
 //        return .zero
 //    }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        switch indexPath.section {
-        case 0:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UserCell.identifier, for: indexPath) as? UserCell else {
-                return UICollectionViewCell()
-            }
-            cell.setUserName("유진")
-            return cell
-        case 1:
+        
+        if indexPath.section == 0 {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TomatoCell.identifier, for: indexPath) as? TomatoCell else {
                 return UICollectionViewCell()
             }
             cell.setupCollectionView()
             return cell
-        default:
+        } else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WantCell.identifier, for: indexPath) as? WantCell else {
                 return UICollectionViewCell()
             }
+            cell.setupCollectionView()
             return cell
         }
     }
