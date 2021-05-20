@@ -25,17 +25,12 @@ class TomatoCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
-//    @objc func loadIndex(_ noti: NSNotification) {
-//        let imageName = noti.object as! String
-//        imageView.image = UIImage(named: imageName)
-//    }
     func setupCollectionView() {
         imageView.layer.cornerRadius = imageView.frame.height / 2
         imageView.image = UIImage(named: imageNames[0])
         
         let layout = CarouselLayout()
         
-//        layout.itemSize = CGSize(width: collectionView.frame.size.width*0.796, height: collectionView.frame.size.height)
         layout.itemSize = CGSize(width: 154, height: 205)
         layout.sideItemScale = 0.77
         layout.spacing = 20
@@ -65,7 +60,6 @@ extension TomatoCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TomatoInnerCell.identifier, for: indexPath) as! TomatoInnerCell
         cell.setCell(imageNames[indexPath.row])
-//        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "index"), object: imageNames[indexPath.row])
         cell.setShadow()
         cell.layer.masksToBounds = false
         return cell
@@ -95,16 +89,7 @@ extension TomatoCell : UIScrollViewDelegate {
             roundedIndex = round(index)
         }
         
-        // 한 칸씩 이동 가능
-//        if currentIndex > roundedIndex {
-//            currentIndex -= 1
-//            roundedIndex = currentIndex
-//        } else if currentIndex < roundedIndex {
-//            currentIndex += 1
-//            roundedIndex = currentIndex
-//        }
-        
-        // 위 코드를 통해 페이징 될 좌표값을 targetContentOffset에 대입하면 된다.
+        // 페이징 될 좌표값을 targetContentOffset에 대입
         offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left, y: -scrollView.contentInset.top)
         targetContentOffset.pointee = offset
         
@@ -114,6 +99,5 @@ extension TomatoCell : UIScrollViewDelegate {
             imageView.image = UIImage(named: imageNames[Int(roundedIndex)])
         }
         
-//        imageView.image = UIImage(named: imageNames[Int(currentIndex)])
     }
 }

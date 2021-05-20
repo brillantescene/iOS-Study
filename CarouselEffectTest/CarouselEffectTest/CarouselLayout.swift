@@ -9,8 +9,8 @@ import UIKit
 
 class CarouselLayout: UICollectionViewFlowLayout {
 
-    public var sideItemScale: CGFloat = 0.5
-    public var spacing: CGFloat = 10
+    public var sideItemScale: CGFloat = 0
+    public var spacing: CGFloat = 0
 
     public var isPagingEnabled: Bool = false
     
@@ -23,29 +23,6 @@ class CarouselLayout: UICollectionViewFlowLayout {
             isSetup = true
         }
     }
-    override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
-
-            guard let collectionView = self.collectionView else {
-                let latestOffset = super.targetContentOffset(forProposedContentOffset: proposedContentOffset, withScrollingVelocity: velocity)
-                return latestOffset
-            }
-
-            let targetRect = CGRect(x: proposedContentOffset.x, y: 0, width: collectionView.frame.width, height: collectionView.frame.height)
-            guard let rectAttributes = super.layoutAttributesForElements(in: targetRect) else { return .zero }
-
-            var offsetAdjustment = CGFloat.greatestFiniteMagnitude
-            let horizontalCenter = proposedContentOffset.x + collectionView.frame.width / 2
-
-            for layoutAttributes in rectAttributes {
-                let itemHorizontalCenter = layoutAttributes.center.x
-                if (itemHorizontalCenter - horizontalCenter).magnitude < offsetAdjustment.magnitude {
-                    offsetAdjustment = itemHorizontalCenter - horizontalCenter
-                }
-            }
-
-            return CGPoint(x: proposedContentOffset.x + offsetAdjustment, y: proposedContentOffset.y)
-        }
-    
     private func setupLayout() {
         guard let collectionView = self.collectionView else {return}
                 
@@ -66,11 +43,13 @@ class CarouselLayout: UICollectionViewFlowLayout {
 
         self.scrollDirection = .horizontal
     }
-    
+    // Bounds 변화가 있을 때마다 레이아웃 업데이트가 필요한지. true
     public override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         return true
     }
     
+    // 셀을 표시할 때 사용하는 함수
+    // 특정 사각형에 있는 모든 셀과 뷰에 대한 레이아웃 요소를 검색, UICollectionViewLayoutAttributes 배열로 변화
     public override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         guard let superAttributes = super.layoutAttributesForElements(in: rect),
             let attributes = NSArray(array: superAttributes, copyItems: true) as? [UICollectionViewLayoutAttributes]

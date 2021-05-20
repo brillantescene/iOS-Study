@@ -26,10 +26,7 @@ class HomeVC: UIViewController {
             .normal("님의\n토마토 로그", fontSize: 22)
         nickNameLabel.attributedText = attributedString
         nickNameLabel.numberOfLines = 2
-//        let headerNib = UINib(nibName: "HeaderCell", bundle: nil)
-//        self.collectionView?.register(headerNib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCell.identifier)
         
-
         let tomatoNib = UINib(nibName: "TomatoCell", bundle: nil)
         self.collectionView?.register(tomatoNib, forCellWithReuseIdentifier: "TomatoCell")
         
@@ -48,22 +45,6 @@ extension HomeVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
     }
-//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//
-////        if indexPath.section == 0 && kind == UICollectionView.elementKindSectionHeader {
-////
-////        }
-//        guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCell.identifier, for: indexPath) as? HeaderCell else {
-//            return UICollectionReusableView()
-//        }
-//        return header
-//    }
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-//        if section == 0 {
-//            return CGSize(width: collectionView.bounds.width, height: 153)
-//        }
-//        return .zero
-//    }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if indexPath.section == 0 {
@@ -84,7 +65,6 @@ extension HomeVC: UICollectionViewDataSource {
 extension HomeVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellHeight = collectionView.frame.height
-//        let cellWidth = (collectionView.frame.width - horizonInset) / 2
         let cellWidth = collectionView.frame.width
         return CGSize(width: cellWidth, height: cellHeight)
     }

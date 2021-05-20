@@ -42,7 +42,6 @@ extension WantCell: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellHeight = collectionView.frame.height
-//        let cellWidth = (collectionView.frame.width - horizonInset) / 2
         let cellWidth = (collectionView.frame.width - 20) / 4
         return CGSize(width: cellWidth, height: cellHeight)
     }
