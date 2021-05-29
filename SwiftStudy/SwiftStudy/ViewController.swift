@@ -15,7 +15,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         structTest()
         classTest()
+        
+        let car = Car()
+        car.name = "egene"
+        car.sayHello()
     }
+    
+    
     
     func structTest() {
         var eugeneInfo = BasicInformation(name: "eugene", age: 99)
@@ -29,6 +35,10 @@ class ViewController: UIViewController {
         
         changeBasicInfo(eugeneInfo)
         print("changeBasicInfo후 eugene's age \(eugeneInfo.age)")
+        
+        print("struct eugene \(eugeneInfo)")
+        print("struct friend \(friendInfo)")
+        
     }
     
     func classTest() {
@@ -46,7 +56,8 @@ class ViewController: UIViewController {
         
         changePersonInfo(eugene)
         print("changePersonInfo후 eugene's height \(eugene.height)")
-        
+        print("eugene \(eugene)")
+        print("friend \(friend)")
     }
 
     func changeBasicInfo(_ info: BasicInformation) {
@@ -57,5 +68,7 @@ class ViewController: UIViewController {
     func changePersonInfo(_ info: Person) {
         info.height = 163.3
     }
+    
+    
 }
 
