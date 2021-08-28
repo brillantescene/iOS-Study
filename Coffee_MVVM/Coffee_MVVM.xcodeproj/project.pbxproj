@@ -14,6 +14,7 @@
 		6B8735F426D920F3004F6FB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B8735F226D920F3004F6FB9 /* LaunchScreen.storyboard */; };
 		6B8735FD26D922DB004F6FB9 /* OrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8735FC26D922DB004F6FB9 /* OrdersTableViewController.swift */; };
 		6B8735FF26D9231D004F6FB9 /* AddOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8735FE26D9231D004F6FB9 /* AddOrderViewController.swift */; };
+		6B87360226DA62B0004F6FB9 /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B87360126DA62B0004F6FB9 /* WebServices.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		6B8735F526D920F3004F6FB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B8735FC26D922DB004F6FB9 /* OrdersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersTableViewController.swift; sourceTree = "<group>"; };
 		6B8735FE26D9231D004F6FB9 /* AddOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrderViewController.swift; sourceTree = "<group>"; };
+		6B87360126DA62B0004F6FB9 /* WebServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServices.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		6B8735E626D920F0004F6FB9 /* Coffee_MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				6B87360026DA6280004F6FB9 /* Services */,
 				6B8735FB26D9214C004F6FB9 /* Controllers */,
 				6B8735E726D920F1004F6FB9 /* AppDelegate.swift */,
 				6B8735E926D920F1004F6FB9 /* SceneDelegate.swift */,
@@ -76,6 +79,14 @@
 				6B8735FE26D9231D004F6FB9 /* AddOrderViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		6B87360026DA6280004F6FB9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6B87360126DA62B0004F6FB9 /* WebServices.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B8735E826D920F1004F6FB9 /* AppDelegate.swift in Sources */,
+				6B87360226DA62B0004F6FB9 /* WebServices.swift in Sources */,
 				6B8735EA26D920F1004F6FB9 /* SceneDelegate.swift in Sources */,
 				6B8735FD26D922DB004F6FB9 /* OrdersTableViewController.swift in Sources */,
 				6B8735FF26D9231D004F6FB9 /* AddOrderViewController.swift in Sources */,
