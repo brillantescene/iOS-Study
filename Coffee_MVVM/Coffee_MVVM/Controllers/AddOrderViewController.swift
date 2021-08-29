@@ -9,9 +9,13 @@ import UIKit
 
 class AddOrderViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    private var vm = AddCoffeeOrderViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.tableView.dataSource = self
         // Do any additional setup after loading the view.
     }
     
@@ -26,4 +30,21 @@ class AddOrderViewController: UIViewController {
     }
     */
 
+}
+extension AddOrderViewController: UITableViewDataSource {
+    
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.vm.coffeeNames.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CoffeeTypeTableViewCell", for: indexPath)
+        
+        cell.textLabel?.text = self.vm.coffeeNames[indexPath.row]
+        return cell
+    }
+    
+    
 }
