@@ -127,6 +127,9 @@
                                 <rect key="frame" x="20" y="7" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="close" destination="2OB-6l-To7" eventType="touchUpInside" id="Vnj-v0-KRW"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" style="plain" id="mNy-ag-s1v">
@@ -134,11 +137,17 @@
                                 <rect key="frame" x="302" y="7" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="save" destination="2OB-6l-To7" eventType="touchUpInside" id="6fW-24-N1m"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="coffeeSizeSegmentControl" destination="6Yc-MR-CCQ" id="SAy-jq-Zai"/>
+                        <outlet property="nameTextField" destination="KrS-4T-SoE" id="dRl-cy-hi9"/>
                         <outlet property="tableView" destination="ED6-2y-xDa" id="bJw-8q-zVJ"/>
+                        <outlet property="totalTextField" destination="pvF-5J-r0v" id="dBY-ZI-X5J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WA9-VP-t07" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

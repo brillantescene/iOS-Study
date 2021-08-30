@@ -10,6 +10,9 @@ import Foundation
 class OrderListViewModel {
     var ordersViewModel: [OrderViewModel]
     
+    var numberOfSections: Int {
+        return 1
+    }
     init() {
         self.ordersViewModel = [OrderViewModel]()
     }
@@ -18,6 +21,10 @@ class OrderListViewModel {
 extension OrderListViewModel {
     func orderViewModel(at index: Int) -> OrderViewModel {
         return self.ordersViewModel[index]
+    }
+    
+    func numberOfRowsInSections(_ section: Int) -> Int {
+        return self.ordersViewModel.count
     }
 }
 struct OrderViewModel {
@@ -31,11 +38,11 @@ extension OrderViewModel {
     }
     
     var coffeeName: String {
+        // caplitalized: latte -> Latte
         return self.order.coffeeName.rawValue.capitalized
     }
     
     var total: Double {
-        // caplitalized: latte -> Latte
         return self.order.total
     }
     

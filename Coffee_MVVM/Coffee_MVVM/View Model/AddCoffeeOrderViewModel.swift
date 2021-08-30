@@ -9,7 +9,9 @@ import Foundation
 
 struct AddCoffeeOrderViewModel {
     var name: String?
-    var email: String?
+    var total: Double?
+    var selectedCoffee: String?
+    var selectedSize: String?
     
     var coffeeNames: [String] {
         return CoffeeType.allCases.map { $0.rawValue.capitalized }
