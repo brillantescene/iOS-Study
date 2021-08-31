@@ -70,11 +70,8 @@
 				6B7046BD26DDD6B500F52CBA /* SceneDelegate.swift */,
 				6B7046BF26DDD6B500F52CBA /* ViewController.swift */,
 				6B7046C126DDD6B500F52CBA /* Main.storyboard */,
-				6B7046D826DDF68C00F52CBA /* TabBarView.xib */,
-				6B7046DA26DDF73F00F52CBA /* TabBarView.swift */,
-				6B7046CF26DDD89600F52CBA /* TabCollectionViewCell.swift */,
+				6B70470326DE317200F52CBA /* CategoryCollectionView */,
 				6B7046D326DDDC0B00F52CBA /* View Model */,
-				6B7046D026DDD89600F52CBA /* TabCollectionViewCell.xib */,
 				6B7046C426DDD6B800F52CBA /* Assets.xcassets */,
 				6B7046C626DDD6B800F52CBA /* LaunchScreen.storyboard */,
 				6B7046C926DDD6B800F52CBA /* Info.plist */,
@@ -88,6 +85,17 @@
 				6B7046D426DDDC1D00F52CBA /* TabViewModel.swift */,
 			);
 			path = "View Model";
+			sourceTree = "<group>";
+		};
+		6B70470326DE317200F52CBA /* CategoryCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				6B7046D826DDF68C00F52CBA /* TabBarView.xib */,
+				6B7046DA26DDF73F00F52CBA /* TabBarView.swift */,
+				6B7046D026DDD89600F52CBA /* TabCollectionViewCell.xib */,
+				6B7046CF26DDD89600F52CBA /* TabCollectionViewCell.swift */,
+			);
+			path = CategoryCollectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

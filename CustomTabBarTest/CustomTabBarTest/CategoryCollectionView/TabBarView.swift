@@ -7,16 +7,37 @@
 
 import UIKit
 
+protocol PagingTabbarDelegate {
+    func scrollToIndex(to index: Int)
+}
+
 class TabBarView: UIView {
-    @IBOutlet weak var collectionView: UICollectionView! {
-        didSet {
-            print("didset")
-            collectionView.dataSource = self
-            collectionView.delegate = self
-            collectionView.register(UINib(nibName: "TabCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "TabCollectionViewCell")
-        }
-    }
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var barUIView: UIView!
+    
     let vm = TabViewModel()
+    var delegate: PagingTabbarDelegate?
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        loadView()
+        
+    }
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        loadView()
+        
+    }
+    private func loadView() {
+        if let view = Bundle.main.loadNibNamed("TabBarView", owner: self, options: nil)?.first as? UIView {
+            view.frame = self.bounds
+            addSubview(view)
+        }
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(UINib(nibName: "TabCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "TabCollectionViewCell")
+    }
+
 }
 extension TabBarView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -41,5 +62,12 @@ extension TabBarView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+    }
+}
+
+extension TabBarView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.scrollToIndex(to: indexPath.row)
+        print(indexPath.row)
     }
 }
