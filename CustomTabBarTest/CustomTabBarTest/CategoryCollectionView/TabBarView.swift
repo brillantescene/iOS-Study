@@ -12,8 +12,8 @@ protocol PagingTabbarDelegate {
 }
 
 class TabBarView: UIView {
+    @IBOutlet weak var view: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var barUIView: UIView!
     
     let vm = TabViewModel()
     var delegate: PagingTabbarDelegate?
@@ -21,23 +21,46 @@ class TabBarView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadView()
-        
+        setConstraint()
     }
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         loadView()
-        
+        setConstraint()
     }
     private func loadView() {
         if let view = Bundle.main.loadNibNamed("TabBarView", owner: self, options: nil)?.first as? UIView {
             view.frame = self.bounds
             addSubview(view)
         }
+        view.addSubview(indicatorView)
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(UINib(nibName: "TabCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "TabCollectionViewCell")
     }
-
+    
+    func scroll(to index: Int) {
+        collectionView.selectItem(at: IndexPath(row: index, section: 0), animated: true, scrollPosition: [])
+    }
+    
+    var indicatorView: UIView = {
+        let indicatorView = UIView()
+        indicatorView.backgroundColor = .systemBlue
+        indicatorView.translatesAutoresizingMaskIntoConstraints = false
+        return indicatorView
+    }()
+    
+    var indicatorLeadingConstraint: NSLayoutConstraint!
+    
+    private func setConstraint() {
+        indicatorLeadingConstraint = indicatorView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
+        NSLayoutConstraint.activate([
+            indicatorView.topAnchor.constraint(equalTo: collectionView.bottomAnchor),
+            indicatorView.widthAnchor.constraint(equalToConstant: self.collectionView.frame.width / 6),
+            indicatorView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            indicatorLeadingConstraint
+        ])
+    }
 }
 extension TabBarView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -56,12 +79,14 @@ extension TabBarView: UICollectionViewDataSource {
 extension TabBarView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellHeight = collectionView.frame.height
-        let cellWidth = collectionView.frame.width / 6
+        let cellWidth = collectionView.frame.width / 4
         return CGSize(width: cellWidth, height: cellHeight)
     }
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
 }
 

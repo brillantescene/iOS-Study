@@ -17,5 +17,12 @@ class TabCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
+    override var isSelected: Bool {
+        didSet {
+            tabLabel.font = isSelected ? UIFont.boldSystemFont(ofSize: 14) : UIFont.systemFont(ofSize: 14)
+            tabLabel.textColor = isSelected ? .systemBlue : .gray
+        }
+    }
+    
 }
