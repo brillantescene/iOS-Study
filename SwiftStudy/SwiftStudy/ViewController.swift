@@ -13,12 +13,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        structTest()
+//        structTest()
         classTest()
-        
-        let car = Car()
-        car.name = "egene"
-        car.sayHello()
+//        var eugene = BasicInformation(name: "eugene", age: 12)
+//        var chaelin = eugene
+//        eugene.name = "yongbok"
+//        print(eugene, chaelin)
     }
     
     
@@ -58,6 +58,8 @@ class ViewController: UIViewController {
         print("changePersonInfo후 eugene's height \(eugene.height)")
         print("eugene \(eugene)")
         print("friend \(friend)")
+        eugene.addWeight()
+        print(eugene)
     }
 
     func changeBasicInfo(_ info: BasicInformation) {

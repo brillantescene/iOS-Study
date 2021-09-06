@@ -8,6 +8,10 @@
 import Foundation
 
 struct BasicInformation {
-    let name: String
+    var name: String
     var age: Int
+    
+    mutating func changeAge() {
+        age += 1
+    }
 }
