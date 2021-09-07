@@ -25,27 +25,51 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aV3-On-Cct">
                                                 <rect key="frame" x="10" y="20" width="30" height="34"/>
+                                                <connections>
+                                                    <action selector="filterButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BpS-T5-GY0"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGL-Kb-g3n">
                                                 <rect key="frame" x="56" y="20" width="30" height="34"/>
+                                                <connections>
+                                                    <action selector="filterButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vec-vS-Isu"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="llo-wL-YBu">
                                                 <rect key="frame" x="66" y="20" width="30" height="34"/>
+                                                <connections>
+                                                    <action selector="filterButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="woU-v6-vaq"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1B-o0-Vwb">
                                                 <rect key="frame" x="117" y="20" width="30" height="34"/>
+                                                <connections>
+                                                    <action selector="filterButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sBN-1v-nyB"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wio-tZ-nkw">
                                                 <rect key="frame" x="149" y="20" width="30" height="34"/>
+                                                <connections>
+                                                    <action selector="filterButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R3v-Z8-PHO"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7hL-mu-Xye">
                                                 <rect key="frame" x="181" y="20" width="30" height="34"/>
+                                                <connections>
+                                                    <action selector="filterButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P4A-FP-HqN"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0b-DO-dIA">
                                                 <rect key="frame" x="209" y="20" width="30" height="34"/>
+                                                <connections>
+                                                    <action selector="filterButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vWK-a2-ga5"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4uD-pV-9bE">
                                                 <rect key="frame" x="248" y="20" width="30" height="34"/>
+                                                <connections>
+                                                    <action selector="filterButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mim-xi-LRk"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
