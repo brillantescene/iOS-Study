@@ -11,19 +11,29 @@ import SnapKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var filterButtonView: UIView!
     @IBOutlet var filterButtons: [UIButton]!
     
     var cafeState = 0 // 어떤 옵션이 선택되어 있는지
     var indexOfOneAndOnlyFilterButton: Int?
+    var buttonWidth: CGFloat = 0
     
     let filterTypes: [String] = ["decaffeine", "soybeanMilk", "oatMilk", "lactofree", "decaffeine", "soybeanMilk", "oatMilk", "lactofree"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        buttonWidth = view.frame.width * 0.224
+        scrollView.snp.makeConstraints {
+            $0.height.equalTo(buttonWidth/2 + 24)
+        }
+        filterButtonView.snp.makeConstraints {
+            $0.width.equalTo(self.view.frame.width * 2)
+        }
+        print("filterButtonView.frame.width \(filterButtonView.frame.width)")
         SetFilterButtons()
     }
     func SetFilterButtons() {
-        let buttonWidth = view.frame.width * 0.224
+//        let buttonWidth = view.frame.width * 0.224
         let spacing = -(view.frame.width - buttonWidth * 4 - 15) / 3
         
         print("view.frame.width \(view.frame.width) buttonWidth \(buttonWidth) spacing \(spacing)")
