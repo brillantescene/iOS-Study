@@ -82,15 +82,15 @@ class NMapViewController: UIViewController, CLLocationManagerDelegate {
         
 //        mapView.lightness = -0.75
         
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization() //권한 요청
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.startUpdatingLocation()
-        
-        let coor = locationManager.location?.coordinate
-
-        move(at: coor)
+//        locationManager = CLLocationManager()
+//        locationManager.delegate = self
+//        locationManager.requestWhenInUseAuthorization() //권한 요청
+//        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+//        locationManager.startUpdatingLocation()
+//        
+//        let coor = locationManager.location?.coordinate
+//
+//        move(at: coor)
     }
     
     func move(at coordinate: CLLocationCoordinate2D?) {

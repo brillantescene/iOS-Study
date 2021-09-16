@@ -8,7 +8,7 @@
 import UIKit
 import NMapsMap
 
-class NaverTestVC: UIViewController, CLLocationManagerDelegate {
+class NaverTestVC: UIViewController {//}, CLLocationManagerDelegate {
     
     @IBOutlet var mapView: NMFMapView!
     @IBOutlet var myBtn: UIButton!
@@ -67,7 +67,7 @@ class NaverTestVC: UIViewController, CLLocationManagerDelegate {
         
         mapView.addCameraDelegate(delegate: self)
         mapView.touchDelegate = self
-        setLocation()
+//        setLocation()
         setMap()
 //        setCamera()
         setMarker()
@@ -80,16 +80,16 @@ class NaverTestVC: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    func setLocation(){
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.startUpdatingLocation()
-        
-        let coor = locationManager.location?.coordinate
-        move(at: coor)
-    }
+//    func setLocation(){
+//        locationManager = CLLocationManager()
+//        locationManager.delegate = self
+//        locationManager.requestWhenInUseAuthorization()
+//        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+//        locationManager.startUpdatingLocation()
+//
+//        let coor = locationManager.location?.coordinate
+//        move(at: coor)
+//    }
     
     func setMap() {
         mapView.minZoomLevel = 5
@@ -170,9 +170,9 @@ class NaverTestVC: UIViewController, CLLocationManagerDelegate {
 //        mapView.moveCamera(camera)
 //    }
     
-    func move(at coordinate: CLLocationCoordinate2D?) {
-        
-        let locationOverlay = mapView.locationOverlay
+//    func move(at coordinate: CLLocationCoordinate2D?) {
+//
+//        let locationOverlay = mapView.locationOverlay
         
 //        guard let coordinate = coordinate else {return}
 //
@@ -184,18 +184,18 @@ class NaverTestVC: UIViewController, CLLocationManagerDelegate {
 //        mapView.moveCamera(camera)
 //        marker.position = NMGLatLng(lat: latitude, lng: longitude)
         
-        mapView.positionMode = .direction
-        mapView.locationOverlay.icon = currentLImage
-        mapView.locationOverlay.subIcon = directionImage
-        
-        print("zoom level: \(mapView.zoomLevel)")
-        
-        locationOverlay.circleRadius = 0 // 기본 원그림자 없애기
-        locationOverlay.iconWidth = CGFloat(NMF_LOCATION_OVERLAY_SIZE_AUTO)
-        locationOverlay.iconHeight = CGFloat(NMF_LOCATION_OVERLAY_SIZE_AUTO)
+//        mapView.positionMode = .direction
+//        mapView.locationOverlay.icon = currentLImage
+//        mapView.locationOverlay.subIcon = directionImage
+//        
+//        print("zoom level: \(mapView.zoomLevel)")
+//        
+//        locationOverlay.circleRadius = 0 // 기본 원그림자 없애기
+//        locationOverlay.iconWidth = CGFloat(NMF_LOCATION_OVERLAY_SIZE_AUTO)
+//        locationOverlay.iconHeight = CGFloat(NMF_LOCATION_OVERLAY_SIZE_AUTO)
         
 //        locationOverlay.location = NMGLatLng(lat: latitude, lng: longitude)
-    }
+//    }
     
     @objc func locationBtnTapped(_ sender:UIButton) {
         cameraUpdate = NMFCameraUpdate(scrollTo: placeMangWon)

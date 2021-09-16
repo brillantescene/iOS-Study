@@ -7,20 +7,21 @@
 
 import UIKit
 import NMapsMap
-import CoreLocation
+import SwiftKeychainWrapper
+//import CoreLocation
 
-class NaverMapTest: UIViewController {
+class NaverMapTest: UIViewController , CLLocationManagerDelegate {
 
     @IBOutlet var mapView: NMFMapView!
     @IBOutlet var locationBtn: UIButton!
     
-    var locationManager = CLLocationManager()
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.showLegalNotice()
         SetLocationBtn()
-        setLocation()
+        getCoordinate()
         setMap()
 //        mapView.logoMargin = UIEdgeInsets(top: 0, left: 30, bottom: 200, right: 0)
         locationManager.delegate = self
@@ -29,14 +30,13 @@ class NaverMapTest: UIViewController {
 
 extension NaverMapTest {
     func SetLocationBtn(){
-        locationBtn.setTitle("compass", for: UIControl.State.selected)
+        locationBtn.setTitle("compass", for: .selected)
         locationBtn.addTarget(self, action: #selector(locationTapped), for: .touchUpInside)
     }
-    func setLocation(){
-        locationManager = CLLocationManager()
-        locationManager.requestWhenInUseAuthorization() //권한요청
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.startUpdatingLocation()
+    func getCoordinate(){
+        locationManager.requestWhenInUseAuthorization() // 권한요청
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest // 정확도
+        locationManager.startUpdatingLocation() // 위치 업데이트 시작
         let coor = locationManager.location?.coordinate
         move(at: coor)
     }
@@ -49,23 +49,23 @@ extension NaverMapTest {
     }
     
     func move(at coordinate: CLLocationCoordinate2D?) {
-        
+
         print("여기는 무브무브")
-        let locationOverlay = mapView.locationOverlay
-        
+//        let locationOverlay = mapView.locationOverlay
+
         print("zoom level: \(mapView.zoomLevel)")
         guard let coordinate = coordinate else {return}
         let latitude = coordinate.latitude
         let longitude = coordinate.longitude
         let camera = NMFCameraUpdate(scrollTo: NMGLatLng(lat: latitude, lng: longitude))
-        
+
         mapView.moveCamera(camera)
-        
+
         mapView.positionMode = .direction
-        
+
         print("mapView.positionMode \(mapView.positionMode.rawValue)")
         print("mapView.locationOverlay.heading \(mapView.locationOverlay.heading)")
-        
+
     }
     @objc func locationTapped(_ sender:UIButton){
         if sender.isSelected == true {
@@ -76,8 +76,4 @@ extension NaverMapTest {
             mapView.positionMode = .compass
         }
     }
-}
-
-extension NaverMapTest: CLLocationManagerDelegate {
-    
 }

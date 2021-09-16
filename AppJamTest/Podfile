@@ -8,5 +8,5 @@ target 'AppJamTest' do
   # Pods for AppJamTest
 
   pod 'NMapsMap'
-
+  pod 'SwiftKeychainWrapper'
 end
