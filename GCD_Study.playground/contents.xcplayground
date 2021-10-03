@@ -5,5 +5,6 @@
         <page name='AsyncVsSync'/>
         <page name='SerialVSConcurrent'/>
         <page name='Qos'/>
+        <page name='Caution'/>
     </pages>
 </playground>
