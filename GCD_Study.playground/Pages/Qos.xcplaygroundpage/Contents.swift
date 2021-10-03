@@ -13,6 +13,7 @@ import Foundation
  ## 1. (글로벌) 메인 큐
  - DispatchQueue.main
  - 유일한 큐. 직렬이고, 메인스레드임
+ - 메인 큐 = 1번 스레드
  - 메인 스레드면서 메인 큐이기도 함
  
  함 보자면
@@ -71,7 +72,14 @@ DispatchQueue.global().async {
  ## 3. 프라이빗 큐
  - 커스텀
  - defult는 직렬임. concurrent 설정 가능
- - 
+ */
+//: 레이블만 붙이면 됨
+let queue1 = DispatchQueue(label: "serial.queue")
+let queue2 = DispatchQueue(label: "concurrent.queue", attributes: .concurrent)
+
+/*:
+ 
+ OS가 알아서 Qos를 추론함
  
  */
 
