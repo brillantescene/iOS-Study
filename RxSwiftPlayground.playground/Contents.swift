@@ -102,6 +102,37 @@ subject.onCompleted()
 // completed 이벤트가 호출됨
 
 subject.onNext("Issue 4")
- */
 
 //: ## Behavior subjects
+let subject = BehaviorSubject(value: "Initial Value")
+
+subject.onNext("Last Issue")
+
+subject.subscribe { event in
+    print(event)
+}
+
+subject.onNext("Issue 1")
+*/
+//: ## Replay subjects
+// 버퍼 사이즈를 기준으로 이벤트를 리플레이하는 subject
+
+let subject = ReplaySubject<String>.create(bufferSize: 2)
+
+subject.onNext("Issue 1")
+subject.onNext("Issue 2")
+subject.onNext("Issue 3")
+
+subject.subscribe {
+    print($0)
+    sleep(1)
+}
+
+subject.onNext("Issue 4")
+subject.onNext("Issue 5")
+subject.onNext("Issue 6")
+
+print("[Subscription 2]")
+subject.subscribe {
+    print($0)
+}
