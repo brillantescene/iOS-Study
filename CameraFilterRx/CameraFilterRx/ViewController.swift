@@ -43,12 +43,17 @@ class ViewController: UIViewController {
             return
         }
         
-        FilterService().applyFilter(to: sourceImage) { filterImage in
-            DispatchQueue.main.async {
-                self.photoImageView.image = filterImage
-            }
-            
-        }
+        FilterService().applyFilter(to: sourceImage)
+            .subscribe(onNext: { filteredImage in
+                DispatchQueue.main.async {
+                    self.photoImageView.image = filteredImage
+                }
+            })
+//        FilterService().applyFilter(to: sourceImage) { filterImage in
+//            DispatchQueue.main.async {
+//                self.photoImageView.image = filterImage
+//            }
+//        }
     }
     private func updateUI(with image: UIImage) {
         self.photoImageView.image = image

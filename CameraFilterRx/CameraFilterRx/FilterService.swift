@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreImage
+import RxSwift
 
 class FilterService {
     
@@ -15,8 +16,18 @@ class FilterService {
     init() {
         self.context = CIContext()
     }
+    // 반응형으로 바꿔보자
+    func applyFilter(to inputImage: UIImage) -> Observable<UIImage>{
+        return Observable<UIImage>.create { observer in
+            self.applyFilter(to: inputImage) { filteredImage in
+                observer.onNext(filteredImage)
+            }
+            return Disposables.create()
+        }
+    }
     
-    func applyFilter(to inputImage: UIImage, completion: @escaping ((UIImage) -> ())) {
+    
+    private func applyFilter(to inputImage: UIImage, completion: @escaping ((UIImage) -> ())) {
         let filter = CIFilter(name: "CICMYKHalftone")!
         filter.setValue(5.0, forKey: kCIInputWidthKey)
         
