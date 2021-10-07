@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6B7657AD270EB586007A6113 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7657AC270EB586007A6113 /* PhotoCollectionViewCell.swift */; };
+		6B7657AF270EC435007A6113 /* FilterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7657AE270EC435007A6113 /* FilterService.swift */; };
 		6BEC2C4F270DD10B00800A2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEC2C4E270DD10B00800A2F /* AppDelegate.swift */; };
 		6BEC2C51270DD10B00800A2F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEC2C50270DD10B00800A2F /* SceneDelegate.swift */; };
 		6BEC2C53270DD10B00800A2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEC2C52270DD10B00800A2F /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		6B7657AC270EB586007A6113 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		6B7657AE270EC435007A6113 /* FilterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterService.swift; sourceTree = "<group>"; };
 		6BEC2C4B270DD10B00800A2F /* CameraFilterRx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CameraFilterRx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BEC2C4E270DD10B00800A2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BEC2C50270DD10B00800A2F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				6BEC2C4E270DD10B00800A2F /* AppDelegate.swift */,
 				6BEC2C50270DD10B00800A2F /* SceneDelegate.swift */,
 				6BEC2C52270DD10B00800A2F /* ViewController.swift */,
+				6B7657AE270EC435007A6113 /* FilterService.swift */,
 				6BEC2C54270DD10B00800A2F /* Main.storyboard */,
 				6BEC2C62270DD73D00800A2F /* PhotosCollectionViewController.swift */,
 				6B7657AC270EB586007A6113 /* PhotoCollectionViewCell.swift */,
@@ -215,6 +218,7 @@
 				6BEC2C53270DD10B00800A2F /* ViewController.swift in Sources */,
 				6B7657AD270EB586007A6113 /* PhotoCollectionViewCell.swift in Sources */,
 				6BEC2C4F270DD10B00800A2F /* AppDelegate.swift in Sources */,
+				6B7657AF270EC435007A6113 /* FilterService.swift in Sources */,
 				6BEC2C51270DD10B00800A2F /* SceneDelegate.swift in Sources */,
 				6BEC2C63270DD73D00800A2F /* PhotosCollectionViewController.swift in Sources */,
 			);
