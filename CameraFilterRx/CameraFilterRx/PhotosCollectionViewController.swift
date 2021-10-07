@@ -19,6 +19,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     // 이걸로 다른 뷰컨에서 구독 가능
     var selectedPhoto: Observable<UIImage> {
+        // 관찰 가능하게 만들기
         return selectedPhotoSubject.asObservable()
     }
     
@@ -47,6 +48,7 @@ class PhotosCollectionViewController: UICollectionViewController {
             
             if !isDegradedImage {
                 if let image = image {
+                    // 이벤트 발생 ~!!~!~!
                     self?.selectedPhotoSubject.onNext(image)
                     self?.dismiss(animated: true, completion: nil)
                 }
