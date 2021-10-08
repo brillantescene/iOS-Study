@@ -72,6 +72,14 @@ class ViewController: UIViewController {
      }
      */
     func downloadJson(_ url: String) -> Observable<String?> {
+        
+//        sugar API
+//         "Hello World"같이 데이터 하나 보낼 때 create onNext onCompleted Diposables 하기 너무 귀찮잖아
+//         그럴 때 쓰는게 just, from 이런거임
+//        return Observable.just("Hello World") // 값 하나라는 뜻
+//        return Observable.from(["Hello", "World"])
+        
+        
         return Observable.create() { emitter in
             let url = URL(string: url)!
             let task = URLSession.shared.dataTask(with: url) { (data, _, err) in
@@ -132,20 +140,40 @@ class ViewController: UIViewController {
         // 순환 참조 생김. 클로저가 self 붙은 애들을 캡쳐하면서 카운트가 증가해서 생기는거잖아
         // 근데 클로저가 사라져 버리면? 카운트도 줄어들겠지
         // 위에서 f.onCompleted() 해놓아서 completed, error에서 클로저가 스스로 사라짐. 순환참조 해결
-        downloadJson(MEMBER_LIST_URL).subscribe { event in // subscribe는 event가 옴.
-            switch event {
-            case .next(let json):
-                //URLSession은 기본적으로 다른 스레드에서 동작하기 때문에 main 스레드로 보내줘야함
-                DispatchQueue.main.async {
-                    self.editView.text = json
-                    self.setVisibleWithAnimation(self.activityIndicator, false)
-                }
-            case .completed:
-                break
-            case .error(let err):
-                break
-            }
-        }
+        
+//        downloadJson(MEMBER_LIST_URL).subscribe { event in // subscribe는 event가 옴.
+//            switch event {
+//            case .next(let json):
+//                //URLSession은 기본적으로 다른 스레드에서 동작하기 때문에 main 스레드로 보내줘야함
+//                DispatchQueue.main.async {
+//                    self.editView.text = json
+//                    self.setVisibleWithAnimation(self.activityIndicator, false)
+//                }
+//            case .completed:
+//                break
+//            case .error(let err):
+//                break
+//            }
+//        }
+        
+//        이 방법 귀찮을 떄 sugar api
+//        next만 처리할래, onCompleted도 할래 이런식으로 선택가능
+        downloadJson(MEMBER_LIST_URL)
+            .subscribe(onNext: {print($0)})
+        downloadJson(MEMBER_LIST_URL)
+            .subscribe(onNext: {print($0)}, onCompleted: {print("completed")})
+        
+        // DispatchQueue.main.async 빼기
+        downloadJson(MEMBER_LIST_URL)
+            .map { json in json?.count ?? 0 } // 멤버를 수로 바꾸기
+            .filter { cnt in cnt > 0 } // 0보다 큰 것만
+            .map { "\($0)" } // Int를 String으로 바꾸고
+            .observeOn(MainScheduler.instance) // 이거 하면 DispatchQueue 빼기 가능 sugar api
+            // 이렇게 데이터를 중간에 바꾸는 sugar를 Operator 라고 함
+            .subscribe(onNext: { json in
+                self.editView.text = json
+                self.setVisibleWithAnimation(self.activityIndicator, false)
+            })
     }
 }
 
