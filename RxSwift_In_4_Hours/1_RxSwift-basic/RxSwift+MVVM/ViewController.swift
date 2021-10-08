@@ -27,6 +27,8 @@ class ViewController: UIViewController {
     @IBOutlet var timerLabel: UILabel!
     @IBOutlet var editView: UITextView!
 
+    var disposeBag = DisposeBag() // 클래스의 멤버변수니까 이 클래스 날리갈때 같이 날라감.
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] _ in
@@ -71,7 +73,7 @@ class ViewController: UIViewController {
          }
      }
      */
-    func downloadJson(_ url: String) -> Observable<String?> {
+    func downloadJson(_ url: String) -> Observable<String> {
         
 //        sugar API
 //         "Hello World"같이 데이터 하나 보낼 때 create onNext onCompleted Diposables 하기 너무 귀찮잖아
@@ -158,22 +160,25 @@ class ViewController: UIViewController {
         
 //        이 방법 귀찮을 떄 sugar api
 //        next만 처리할래, onCompleted도 할래 이런식으로 선택가능
-        downloadJson(MEMBER_LIST_URL)
-            .subscribe(onNext: {print($0)})
-        downloadJson(MEMBER_LIST_URL)
-            .subscribe(onNext: {print($0)}, onCompleted: {print("completed")})
+//        downloadJson(MEMBER_LIST_URL)
+//            .subscribe(onNext: {print($0)})
+//        downloadJson(MEMBER_LIST_URL)
+//            .subscribe(onNext: {print($0)}, onCompleted: {print("completed")})
         
-        // DispatchQueue.main.async 빼기
-        downloadJson(MEMBER_LIST_URL)
-            .map { json in json?.count ?? 0 } // 멤버를 수로 바꾸기
-            .filter { cnt in cnt > 0 } // 0보다 큰 것만
-            .map { "\($0)" } // Int를 String으로 바꾸고
+        let jsonObservable = downloadJson(MEMBER_LIST_URL)
+        let helloObservable = Observable.just("Hello World")
+        
+        Observable.zip(jsonObservable, helloObservable) { $1 + "\n" + $0 }
+//            .map { json in json?.count ?? 0 } // 멤버를 수로 바꾸기
+//            .filter { cnt in cnt > 0 } // 0보다 큰 것만
+//            .map { "\($0)" } // Int를 String으로 바꾸고
             .observeOn(MainScheduler.instance) // 이거 하면 DispatchQueue 빼기 가능 sugar api
             // 이렇게 데이터를 중간에 바꾸는 sugar를 Operator 라고 함
             .subscribe(onNext: { json in
                 self.editView.text = json
                 self.setVisibleWithAnimation(self.activityIndicator, false)
             })
+            .disposed(by: disposeBag)
     }
 }
 
