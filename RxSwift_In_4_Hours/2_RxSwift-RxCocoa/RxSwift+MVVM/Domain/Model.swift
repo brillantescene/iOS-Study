@@ -8,14 +8,20 @@
 
 import Foundation
 
-//struct MenuItem: Decodable {
-//    var name: String
-//    var price: Int
-//}
+struct MenuItem: Decodable {
+    var name: String
+    var price: Int
+}
 
 struct Menu {
     let id: Int
-    var title: String
+    var name: String
     var price: Int
     var count: Int
+}
+
+extension Menu {
+    static func fromMenuItems(id: Int, item: MenuItem) -> Menu {
+        return Menu(id: id, name: item.name, price: item.price, count: 0)
+    }
 }

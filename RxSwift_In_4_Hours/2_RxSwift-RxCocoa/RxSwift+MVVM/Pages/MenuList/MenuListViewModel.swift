@@ -22,18 +22,28 @@ class MenuListViewModel {
     //    Subject: 값을 받아먹기도, 써먹기도 할 수 있음
     
     init() {
-        let menus: [Menu] = [
-            Menu(id: 0, name: "튀김1", price: 100, count: 0),
-            Menu(id: 1, name: "튀김1", price: 100, count: 0),
-            Menu(id: 2, name: "튀김1", price: 100, count: 0),
-            Menu(id: 3, name: "튀김1", price: 100, count: 0)
-        ]
-        
-        menuObservable.onNext(menus)
+        _ = APIService.fetchAllMenusRx()
+            .map { data -> [MenuItem] in
+                struct Response: Decodable {
+                    let menus: [MenuItem]
+                }
+                let response = try! JSONDecoder().decode(Response.self, from: data)
+                return response.menus
+            }
+            .map { menuItems in
+                var menus:[Menu] = []
+                menuItems.enumerated().forEach{(index, item) in
+                    let menu = Menu.fromMenuItems(id: index, item: item)
+                    menus.append(menu)
+                }
+                return menus
+            }
+            .take(1)
+            .bind(to: menuObservable)
     }
     
     func clearAllItemSelections() {
-        let _ = menuObservable
+        _ = menuObservable
             .map { menus in
                 return menus.map {
                     Menu(id: $0.id, name: $0.name, price: $0.price, count: 0)
@@ -46,7 +56,7 @@ class MenuListViewModel {
     }
     
     func changeCount(item: Menu, increase: Int) {
-        let _ = menuObservable
+        _ = menuObservable
             .map { menus in
                 menus.map {
                     if $0.id == item.id {
