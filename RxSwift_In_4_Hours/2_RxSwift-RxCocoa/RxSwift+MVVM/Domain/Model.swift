@@ -14,6 +14,7 @@ import Foundation
 //}
 
 struct Menu {
+    let id: Int
     var title: String
     var price: Int
     var count: Int
