@@ -13,6 +13,7 @@
 		6B14670C271561FD00A0ED0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B14670A271561FD00A0ED0B /* Main.storyboard */; };
 		6B14670E2715620000A0ED0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B14670D2715620000A0ED0B /* Assets.xcassets */; };
 		6B1467112715620000A0ED0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B14670F2715620000A0ED0B /* LaunchScreen.storyboard */; };
+		6B1467192716AD4E00A0ED0B /* CalculateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1467182716AD4E00A0ED0B /* CalculateViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		6B14670D2715620000A0ED0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B1467102715620000A0ED0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6B1467122715620000A0ED0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B1467182716AD4E00A0ED0B /* CalculateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				6B146704271561FC00A0ED0B /* AppDelegate.swift */,
 				6B146706271561FC00A0ED0B /* SceneDelegate.swift */,
 				6B146708271561FC00A0ED0B /* ViewController.swift */,
+				6B1467182716AD4E00A0ED0B /* CalculateViewModel.swift */,
 				6B14670A271561FD00A0ED0B /* Main.storyboard */,
 				6B14670D2715620000A0ED0B /* Assets.xcassets */,
 				6B14670F2715620000A0ED0B /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B146709271561FD00A0ED0B /* ViewController.swift in Sources */,
+				6B1467192716AD4E00A0ED0B /* CalculateViewModel.swift in Sources */,
 				6B146705271561FC00A0ED0B /* AppDelegate.swift in Sources */,
 				6B146707271561FC00A0ED0B /* SceneDelegate.swift in Sources */,
 			);
