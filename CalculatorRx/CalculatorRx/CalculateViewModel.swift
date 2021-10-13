@@ -21,14 +21,20 @@ class CalculateViewModel {
         operandArr.append(result)
     }
     
+    func getResult() -> String {
+        print("\(floor(result))", "\(result)")
+        return result.isInt() ? "\(Int(result))" : "\(result)"
+    }
+    
     func getOperator(_ tag: Int) {
         if tag == 0 { // =
             while !operatorArr.isEmpty {
                 operation(op: operatorArr.popLast()!)
             }
             result = operandArr.first!
+            operandArr.removeAll()
         } else {
-            if tag == 1 || tag == 2{ // +-
+            if tag == 1 || tag == 2 { // +-
                 while !operatorArr.isEmpty {
                     operation(op: operatorArr.popLast()!)
                 }
@@ -50,10 +56,14 @@ class CalculateViewModel {
             operatorArr.removeAll()
         } else if op == 1 { // sign
             result = -result
+            operandArr.removeLast()
+            operandArr.append(result)
         } else if op == 2 { // per
             result = result / 100
+            operandArr.removeLast()
+            operandArr.append(result)
         }
-        return "\(result)"
+        return getResult()
     }
     
     func operation(op: String) {
@@ -70,5 +80,11 @@ class CalculateViewModel {
         } else if op == "/" {
             operandArr.append(a / b)
         }
+    }
+}
+
+extension Double {
+    func isInt() -> Bool {
+        return self == floor(self)
     }
 }

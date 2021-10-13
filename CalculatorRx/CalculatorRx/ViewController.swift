@@ -27,12 +27,13 @@ class ViewController: UIViewController {
         viewModel.getOperator(sender.tag)
         // = 이면 label 표시
         if sender.tag == 0 {
-            dashboardLabel.text = "\(viewModel.result)"
+            dashboardLabel.text = viewModel.getResult()
         }
     }
     
     // 1개 필요
     @IBAction func touchUpUnary(_ sender: UIButton) {
+        
         dashboardLabel.text = viewModel.calculate(with: sender.tag)
     }
 }
