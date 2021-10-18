@@ -51,7 +51,13 @@
                             <constraint firstItem="Sfy-q6-dxf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="33" id="aKz-Fv-NJy"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="GoodList" id="E6U-77-HBF"/>
+                    <navigationItem key="navigationItem" title="GoodList" id="E6U-77-HBF">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="hDC-1Z-1YZ">
+                            <connections>
+                                <segue destination="Bb1-mz-hfx" kind="presentation" id="Rbq-x8-Bwp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="prioritysegmentedController" destination="Sfy-q6-dxf" id="XnP-8G-HIf"/>
                         <outlet property="tableView" destination="xeF-mh-faD" id="VR9-UQ-l5t"/>
@@ -60,6 +66,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="96.428571428571431"/>
+        </scene>
+        <!--Add Task-->
+        <scene sceneID="j2E-jh-gDo">
+            <objects>
+                <viewController id="Wqf-6q-q0w" customClass="AddTaskViewController" customModule="ToDoListRx" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UVb-cW-pbi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="X4y-Px-pRG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Task" id="hEq-K1-PEw">
+                        <barButtonItem key="rightBarButtonItem" title="Save" style="plain" id="Uc5-yE-00r">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="BYi-sL-paY">
+                                <rect key="frame" x="-33" y="-15" width="92" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ngq-XZ-RWR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2720.289855072464" y="96.428571428571431"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Jjd-pZ-TQw">
@@ -78,6 +109,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="smc-EV-2Cd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="96.428571428571431"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8FX-5l-wd6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="Bb1-mz-hfx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fBG-Dv-qHn">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Wqf-6q-q0w" kind="relationship" relationship="rootViewController" id="A56-Nf-d9B"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Qs-tP-1kv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1808.6956521739132" y="95.758928571428569"/>
         </scene>
     </scenes>
     <resources>

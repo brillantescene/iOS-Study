@@ -12,8 +12,17 @@ class TaskListViewController: UIViewController {
     @IBOutlet weak var prioritysegmentedController: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     
+    override func viewDidLoad() {
+        viewDidLoad()
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
 }
 extension TaskListViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
