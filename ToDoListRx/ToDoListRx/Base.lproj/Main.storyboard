@@ -74,19 +74,51 @@
                     <view key="view" contentMode="scaleToFill" id="UVb-cW-pbi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hU1-xn-v3R">
+                                <rect key="frame" x="104" y="127" width="206" height="32"/>
+                                <segments>
+                                    <segment title="High"/>
+                                    <segment title="Medium"/>
+                                    <segment title="Low"/>
+                                </segments>
+                            </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gdr-dc-1lQ">
+                                <rect key="frame" x="107" y="431" width="200" height="34"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="yRa-De-TWl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="X4y-Px-pRG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hU1-xn-v3R" firstAttribute="centerX" secondItem="UVb-cW-pbi" secondAttribute="centerX" id="4yf-wE-Kbq"/>
+                            <constraint firstItem="Gdr-dc-1lQ" firstAttribute="centerY" secondItem="UVb-cW-pbi" secondAttribute="centerY" id="Ljj-a7-ZNU"/>
+                            <constraint firstItem="hU1-xn-v3R" firstAttribute="top" secondItem="X4y-Px-pRG" secondAttribute="top" constant="39" id="Sez-WV-Znc"/>
+                            <constraint firstItem="Gdr-dc-1lQ" firstAttribute="centerX" secondItem="UVb-cW-pbi" secondAttribute="centerX" id="tMS-qq-F91"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Task" id="hEq-K1-PEw">
                         <barButtonItem key="rightBarButtonItem" title="Save" style="plain" id="Uc5-yE-00r">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="BYi-sL-paY">
-                                <rect key="frame" x="-33" y="-15" width="92" height="31"/>
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="BYi-sL-paY">
+                                <rect key="frame" x="302" y="5" width="92" height="34.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                <connections>
+                                    <action selector="save" destination="Wqf-6q-q0w" eventType="touchUpInside" id="ETc-X4-h1E"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="prioritySegmentedControl" destination="hU1-xn-v3R" id="Ym3-59-81R"/>
+                        <outlet property="taskTitleTextField" destination="Gdr-dc-1lQ" id="eHQ-kS-8gU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ngq-XZ-RWR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -132,6 +164,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
