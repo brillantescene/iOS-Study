@@ -43,6 +43,10 @@ class TaskListViewController: UIViewController {
             }).disposed(by: disposeBag)
     }
     
+    @IBAction func priorityValueChanged(segmentedControl: UISegmentedControl) {
+        let priority = Priority(rawValue: segmentedControl.selectedSegmentIndex - 1)
+        filterTasks(by: priority)
+    }
     private func filterTasks(by priority: Priority?) {
         
         if priority == nil {
