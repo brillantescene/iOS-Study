@@ -15,6 +15,8 @@ class TaskListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private var tasks = BehaviorRelay<[Task]>(value: [])
+    private var filteredTasks = [Task]()
+    
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -36,7 +38,23 @@ class TaskListViewController: UIViewController {
                 var existingTask = self.tasks.value
                 existingTask.append(task)
                 self.tasks.accept(existingTask)
+                
+                self.filterTasks(by: priority)
             }).disposed(by: disposeBag)
+    }
+    
+    private func filterTasks(by priority: Priority?) {
+        
+        if priority == nil {
+            self.filteredTasks = self.tasks.value
+        } else {
+            self.tasks.map { tasks in
+                return tasks.filter { $0.proprity == priority! }
+            }.subscribe(onNext: { tasks in
+                self.filteredTasks = tasks
+                print(tasks)
+            }).disposed(by: disposeBag)
+        }
     }
     
 }
