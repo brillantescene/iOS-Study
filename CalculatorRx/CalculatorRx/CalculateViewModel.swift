@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxSwift
 
 class CalculateViewModel {
     
@@ -14,7 +15,7 @@ class CalculateViewModel {
     
     let operatorBag = ["=", "+", "-", "*", "/"]
     
-    var result: Double = 0
+    var result = Observable.just(0)
     
     func getNumber(_ num: Int) {
         result = Double(num)

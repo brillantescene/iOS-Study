@@ -6,15 +6,24 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var dashboardLabel: UILabel!
     
     let viewModel = CalculateViewModel()
+    var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewModel.result
+            .subscribe(onNext: {
+                self.dashboardLabel.text = "\($0)"
+            })
+            .disposed(by: disposeBag)
     }
     
     @IBAction func touchUpNumber(_ sender: UIButton) {
