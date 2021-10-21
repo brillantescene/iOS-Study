@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Report View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="tableViewRx" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ReportViewController" customModule="tableViewRx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -76,6 +76,12 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7W-xU-E2v">
+                                <rect key="frame" x="110.66666666666667" y="213" width="12" height="22"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -83,15 +89,18 @@
                             <constraint firstItem="oXt-kW-bJ4" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="6yu-yf-9DM"/>
                             <constraint firstItem="Wcc-tp-7Ii" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="GX6-Oe-hxs"/>
                             <constraint firstItem="oXt-kW-bJ4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Kgs-wS-OKd"/>
+                            <constraint firstItem="r7W-xU-E2v" firstAttribute="leading" secondItem="Hpx-rX-BZs" secondAttribute="trailing" constant="8" id="U76-y9-lV1"/>
                             <constraint firstItem="Wcc-tp-7Ii" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WD9-IC-kmu"/>
                             <constraint firstAttribute="trailing" secondItem="Wcc-tp-7Ii" secondAttribute="trailing" id="aZm-Ab-Xzh"/>
                             <constraint firstItem="Hpx-rX-BZs" firstAttribute="top" secondItem="Wcc-tp-7Ii" secondAttribute="bottom" constant="8" id="f2i-tn-lCF"/>
                             <constraint firstAttribute="trailing" secondItem="oXt-kW-bJ4" secondAttribute="trailing" id="f7h-G9-Em0"/>
                             <constraint firstItem="Hpx-rX-BZs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="kDg-2v-Cc6"/>
                             <constraint firstItem="oXt-kW-bJ4" firstAttribute="top" secondItem="Hpx-rX-BZs" secondAttribute="bottom" constant="20" id="mGR-bE-9GR"/>
+                            <constraint firstItem="r7W-xU-E2v" firstAttribute="top" secondItem="Wcc-tp-7Ii" secondAttribute="bottom" constant="8" id="vyS-9r-oFU"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="reportCountLabel" destination="r7W-xU-E2v" id="pP8-iz-YPa"/>
                         <outlet property="tableView" destination="oXt-kW-bJ4" id="Mwo-1k-nDN"/>
                     </connections>
                 </viewController>
