@@ -10,7 +10,7 @@ import RxSwift
 
 class ReportListViewModel {
     
-    var reportObservable = PublishSubject<[Report]>()
+    var reportObservable = BehaviorSubject<[Report]>(value: [])
     
     lazy var itemsCount = reportObservable.map { $0.count }
     
