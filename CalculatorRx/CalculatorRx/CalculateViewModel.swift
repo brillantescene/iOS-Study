@@ -15,7 +15,7 @@ class CalculateViewModel {
     
     let operatorBag = ["=", "+", "-", "*", "/"]
     
-    var result = Observable.just(0)
+    var result: BehaviorSubject<Double> = BehaviorSubject(value: 0)
     
     func getNumber(_ num: Int) {
         result = Double(num)
