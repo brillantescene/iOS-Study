@@ -76,6 +76,15 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J83-G9-NHK">
+                                <rect key="frame" x="300" y="213" width="70" height="31"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Add❗️"/>
+                                <connections>
+                                    <action selector="onAdd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3QY-IN-pxE"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7W-xU-E2v">
                                 <rect key="frame" x="110.66666666666667" y="213" width="12" height="22"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
@@ -89,6 +98,8 @@
                             <constraint firstItem="oXt-kW-bJ4" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="6yu-yf-9DM"/>
                             <constraint firstItem="Wcc-tp-7Ii" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="GX6-Oe-hxs"/>
                             <constraint firstItem="oXt-kW-bJ4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Kgs-wS-OKd"/>
+                            <constraint firstItem="J83-G9-NHK" firstAttribute="top" secondItem="Wcc-tp-7Ii" secondAttribute="bottom" constant="8" id="MLy-SU-nVA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="J83-G9-NHK" secondAttribute="trailing" constant="20" id="Omu-8C-YHf"/>
                             <constraint firstItem="r7W-xU-E2v" firstAttribute="leading" secondItem="Hpx-rX-BZs" secondAttribute="trailing" constant="8" id="U76-y9-lV1"/>
                             <constraint firstItem="Wcc-tp-7Ii" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WD9-IC-kmu"/>
                             <constraint firstAttribute="trailing" secondItem="Wcc-tp-7Ii" secondAttribute="trailing" id="aZm-Ab-Xzh"/>
@@ -111,6 +122,9 @@
     </scenes>
     <resources>
         <image name="curtain" width="375" height="195.33332824707031"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -19,7 +19,16 @@ class ReportViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUI()
         
+        
+    }
+    
+    @IBAction func onAdd(_ sender: UIButton) {
+        viewModel.onAdd()
+    }
+    
+    func setUI() {
         viewModel.reportObservable
             .observe(on: MainScheduler.instance)
             .bind(to: tableView.rx.items(cellIdentifier: ReportItemTableViewCell.identifier,
@@ -27,17 +36,25 @@ class ReportViewController: UIViewController {
                 cell.date.text = item.date
                 cell.title.text = item.title
                 cell.address.text = item.address
+                self.updateUI()
             }
             .disposed(by: disposeBag)
         
         viewModel.itemsCount
             .map { "\($0)" }
             .observe(on: MainScheduler.instance)
-            .bind(to: reportCountLabel.rx.text)
+//            .bind(to: reportCountLabel.rx.text)
+            .subscribe(onNext: {
+                self.reportCountLabel.text = $0
+//                print($0)
+            })
             .disposed(by: disposeBag)
-        
     }
-
-
+    
+    func updateUI() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
 }
 
