@@ -20,8 +20,6 @@ class ReportViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-        
-        
     }
     
     @IBAction func onAdd(_ sender: UIButton) {
@@ -36,18 +34,13 @@ class ReportViewController: UIViewController {
                 cell.date.text = item.date
                 cell.title.text = item.title
                 cell.address.text = item.address
-                self.updateUI()
             }
             .disposed(by: disposeBag)
         
         viewModel.itemsCount
             .map { "\($0)" }
             .observe(on: MainScheduler.instance)
-//            .bind(to: reportCountLabel.rx.text)
-            .subscribe(onNext: {
-                self.reportCountLabel.text = $0
-//                print($0)
-            })
+            .bind(to: reportCountLabel.rx.text)
             .disposed(by: disposeBag)
     }
     

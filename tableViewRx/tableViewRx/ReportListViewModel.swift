@@ -31,13 +31,19 @@ class ReportListViewModel {
     }
     
     func onAdd() {
-//        reportObservable.onNext(Report(date: "2021.10.21", title: "새로운 윶니의 카페", address: "서울특별시 어쩌고"))
-        reportObservable.subscribe(onNext: { [self] report in
-            var existReports = self.reports.value
-            existReports.append(Report(date: "2021.10.21", title: "새로운 윶니의 카페", address: "서울특별시 어쩌고"))
-            self.reports.accept(existReports)
-            print(self.reports.value)
-        })
+//        reportObservable.onNext([Report(date: "2021.10.21", title: "새로운 윶니의 카페", address: "서울특별시 어쩌고")])
+//        var existReports = self.reports.value
+//        existReports.append(Report(date: "2021.10.21", title: "새로운 윶니의 카페", address: "서울특별시 어쩌고"))
+//        self.reports.accept(existReports)
+//        print(reports.value)
+        reportObservable
+            .subscribe(onNext: { report in
+                var existReports = self.reports.value
+                existReports.append(Report(date: "2021.10.21", title: "새로운 윶니의 카페", address: "서울특별시 어쩌고"))
+                self.reports.accept(existReports)
+                print(self.reports.value)
+            })
             .disposed(by: disposeBag)
+//        print(reports.value)
     }
 }
