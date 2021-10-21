@@ -32,7 +32,7 @@
                                 <rect key="frame" x="0.0" y="254.66666666666669" width="390" height="555.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="ZAc-zW-FsH">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReportItemTableViewCell" rowHeight="100" id="ZAc-zW-FsH" customClass="ReportItemTableViewCell" customModule="tableViewRx" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZAc-zW-FsH" id="rIV-V1-sfr">
@@ -68,6 +68,11 @@
                                                 <constraint firstItem="Suf-be-zgI" firstAttribute="leading" secondItem="rIV-V1-sfr" secondAttribute="leading" constant="24" id="yjg-1w-zVJ"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="address" destination="EIe-9J-jA3" id="bpA-ld-I1i"/>
+                                            <outlet property="date" destination="Bfi-lV-Ugc" id="dUy-Ar-zkr"/>
+                                            <outlet property="title" destination="Suf-be-zgI" id="J7a-T9-1Zp"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
