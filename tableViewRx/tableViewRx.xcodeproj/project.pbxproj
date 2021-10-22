@@ -16,6 +16,8 @@
 		6BCDBC5C27211D41001A867A /* ReportItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCDBC5B27211D41001A867A /* ReportItemTableViewCell.swift */; };
 		6BCDBC5E27211E3C001A867A /* ReportListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCDBC5D27211E3C001A867A /* ReportListViewModel.swift */; };
 		6BCDBC6027211ED0001A867A /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCDBC5F27211ED0001A867A /* Report.swift */; };
+		6BFB013527229B36006FECD5 /* MyReport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BFB013427229B36006FECD5 /* MyReport.storyboard */; };
+		6BFB013827229B6A006FECD5 /* MyReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFB013727229B6A006FECD5 /* MyReportViewController.swift */; };
 		C02161B572F107C8BE6F2E1D /* Pods_tableViewRx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1D86530F5C143FBE5B34550 /* Pods_tableViewRx.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +34,8 @@
 		6BCDBC5B27211D41001A867A /* ReportItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportItemTableViewCell.swift; sourceTree = "<group>"; };
 		6BCDBC5D27211E3C001A867A /* ReportListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportListViewModel.swift; sourceTree = "<group>"; };
 		6BCDBC5F27211ED0001A867A /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
+		6BFB013427229B36006FECD5 /* MyReport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyReport.storyboard; sourceTree = "<group>"; };
+		6BFB013727229B6A006FECD5 /* MyReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReportViewController.swift; sourceTree = "<group>"; };
 		92727D84817BFDEB06472726 /* Pods-tableViewRx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tableViewRx.debug.xcconfig"; path = "Target Support Files/Pods-tableViewRx/Pods-tableViewRx.debug.xcconfig"; sourceTree = "<group>"; };
 		A1D86530F5C143FBE5B34550 /* Pods_tableViewRx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tableViewRx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -80,16 +84,34 @@
 			children = (
 				6BCDBC4727211900001A867A /* AppDelegate.swift */,
 				6BCDBC4927211900001A867A /* SceneDelegate.swift */,
-				6BCDBC4B27211900001A867A /* ReportViewController.swift */,
-				6BCDBC4D27211900001A867A /* Main.storyboard */,
-				6BCDBC5B27211D41001A867A /* ReportItemTableViewCell.swift */,
-				6BCDBC5D27211E3C001A867A /* ReportListViewModel.swift */,
-				6BCDBC5F27211ED0001A867A /* Report.swift */,
+				6BFB013627229B3C006FECD5 /* My Report */,
+				6BFB013327229ADF006FECD5 /* Basic */,
 				6BCDBC5027211903001A867A /* Assets.xcassets */,
 				6BCDBC5227211903001A867A /* LaunchScreen.storyboard */,
 				6BCDBC5527211903001A867A /* Info.plist */,
 			);
 			path = tableViewRx;
+			sourceTree = "<group>";
+		};
+		6BFB013327229ADF006FECD5 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				6BCDBC4D27211900001A867A /* Main.storyboard */,
+				6BCDBC4B27211900001A867A /* ReportViewController.swift */,
+				6BCDBC5B27211D41001A867A /* ReportItemTableViewCell.swift */,
+				6BCDBC5D27211E3C001A867A /* ReportListViewModel.swift */,
+				6BCDBC5F27211ED0001A867A /* Report.swift */,
+			);
+			path = Basic;
+			sourceTree = "<group>";
+		};
+		6BFB013627229B3C006FECD5 /* My Report */ = {
+			isa = PBXGroup;
+			children = (
+				6BFB013427229B36006FECD5 /* MyReport.storyboard */,
+				6BFB013727229B6A006FECD5 /* MyReportViewController.swift */,
+			);
+			path = "My Report";
 			sourceTree = "<group>";
 		};
 		87CE3FE352DE718BB147FE47 /* Frameworks */ = {
@@ -160,6 +182,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BFB013527229B36006FECD5 /* MyReport.storyboard in Resources */,
 				6BCDBC5427211903001A867A /* LaunchScreen.storyboard in Resources */,
 				6BCDBC5127211903001A867A /* Assets.xcassets in Resources */,
 				6BCDBC4F27211900001A867A /* Main.storyboard in Resources */,
@@ -221,6 +244,7 @@
 				6BCDBC5C27211D41001A867A /* ReportItemTableViewCell.swift in Sources */,
 				6BCDBC4A27211900001A867A /* SceneDelegate.swift in Sources */,
 				6BCDBC6027211ED0001A867A /* Report.swift in Sources */,
+				6BFB013827229B6A006FECD5 /* MyReportViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
