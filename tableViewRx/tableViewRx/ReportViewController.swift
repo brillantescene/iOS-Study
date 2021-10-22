@@ -23,6 +23,7 @@ class ReportViewController: UIViewController {
     }
     
     @IBAction func onAdd(_ sender: UIButton) {
+//        viewModel.reports.accept([Report(date: "2021.10.21", title: "새로운 윶니의 카페", address: "서울특별시 어쩌고")])
         viewModel.onAdd()
     }
     

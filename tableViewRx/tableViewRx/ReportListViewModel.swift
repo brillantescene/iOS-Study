@@ -36,14 +36,24 @@ class ReportListViewModel {
 //        existReports.append(Report(date: "2021.10.21", title: "새로운 윶니의 카페", address: "서울특별시 어쩌고"))
 //        self.reports.accept(existReports)
 //        print(reports.value)
-        reportObservable
+        reports
             .subscribe(onNext: { report in
                 var existReports = self.reports.value
                 existReports.append(Report(date: "2021.10.21", title: "새로운 윶니의 카페", address: "서울특별시 어쩌고"))
-                self.reports.accept(existReports)
+                self.reportObservable.onNext(existReports)
                 print(self.reports.value)
             })
             .disposed(by: disposeBag)
+//        reportObservable
+//            .subscribe(onNext: { report in
+//                var existReports = self.reports.value
+//                existReports.append(Report(date: "2021.10.21", title: "새로운 윶니의 카페", address: "서울특별시 어쩌고"))
+//                self.reports.accept(existReports)
+//                self.reportObservable.onNext(existReports)
+//                print(self.reports.value)
+//            })
+//            .disposed(by: disposeBag)
+        
 //        print(reports.value)
     }
 }
