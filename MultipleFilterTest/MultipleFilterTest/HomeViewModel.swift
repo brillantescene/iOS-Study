@@ -11,6 +11,10 @@ class HomeViewModel {
     
 }
 
+struct Result {
+    let title: String
+    let category: [Category]
+}
 
 enum Category: String, CaseIterable {
     case decaffeine = "디카페인"

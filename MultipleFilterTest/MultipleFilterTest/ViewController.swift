@@ -24,6 +24,9 @@ class ViewController: UIViewController {
     var cafeState = 0 // 어떤 옵션이 선택되어 있는지
     var indexOfOneAndOnlyFilterButton: Int? // 라디오 버튼
     
+    
+    var data = [Result]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,6 +36,12 @@ class ViewController: UIViewController {
         
         addView()
         setAutoLayout()
+        
+        let num = 2
+        let arr = [1, 2, 3]
+        if arr.contains(num) {
+            print("hi")
+        }
     }
 
 
@@ -104,27 +113,35 @@ class ViewController: UIViewController {
     
     @objc func sendFilterButtonTag(_ sender:UIButton) {
         print("카테고리 \(sender.tag) \(Category.asArray[sender.tag-1])")
-        if indexOfOneAndOnlyFilterButton != nil{
-            if !sender.isSelected {
-                for unselectIndex in filterButtons.indices {
-                    filterButtons[unselectIndex].isSelected = false
-                }
-                sender.isSelected = true
-                indexOfOneAndOnlyFilterButton = filterButtons.firstIndex(of: sender)
-                cafeState = sender.tag
-            } else {
-                sender.isSelected = false
-                indexOfOneAndOnlyFilterButton = nil
-                cafeState = 0
-            }
-
+        if sender.isSelected {
+            sender.isSelected = false
         } else {
             sender.isSelected = true
-            indexOfOneAndOnlyFilterButton = filterButtons.firstIndex(of: sender)
-            cafeState = sender.tag
         }
-        print(sender.isSelected, indexOfOneAndOnlyFilterButton ?? 0)
-        print("check: \(cafeState)")
     }
+//    @objc func sendFilterButtonTag(_ sender:UIButton) {
+//        print("카테고리 \(sender.tag) \(Category.asArray[sender.tag-1])")
+//        if indexOfOneAndOnlyFilterButton != nil{
+//            if !sender.isSelected {
+//                for unselectIndex in filterButtons.indices {
+//                    filterButtons[unselectIndex].isSelected = false
+//                }
+//                sender.isSelected = true
+//                indexOfOneAndOnlyFilterButton = filterButtons.firstIndex(of: sender)
+//                cafeState = sender.tag
+//            } else {
+//                sender.isSelected = false
+//                indexOfOneAndOnlyFilterButton = nil
+//                cafeState = 0
+//            }
+//
+//        } else {
+//            sender.isSelected = true
+//            indexOfOneAndOnlyFilterButton = filterButtons.firstIndex(of: sender)
+//            cafeState = sender.tag
+//        }
+//        print(sender.isSelected, indexOfOneAndOnlyFilterButton ?? 0)
+//        print("check: \(cafeState)")
+//    }
 }
 
