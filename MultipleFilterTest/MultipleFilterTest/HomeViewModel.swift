@@ -13,7 +13,7 @@ class HomeViewModel {
 
 struct Result {
     let title: String
-    let category: [Category]
+    let category: [Int]
 }
 
 enum Category: String, CaseIterable {

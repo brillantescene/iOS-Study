@@ -24,8 +24,17 @@ class ViewController: UIViewController {
     var cafeState = 0 // 어떤 옵션이 선택되어 있는지
     var indexOfOneAndOnlyFilterButton: Int? // 라디오 버튼
     
+    var filterArr = [Int]()
     
-    var data = [Result]()
+    var data: [Result] = [
+        Result(title: "일", category: [1]),
+        Result(title: "일이", category: [1, 2]),
+        Result(title: "삼사", category: [3, 4]),
+        Result(title: "이", category: [2]),
+        Result(title: "이오", category: [2, 5]),
+        Result(title: "삼육", category: [3, 6]),
+        Result(title: "일이삼오", category: [1, 2, 3, 5])
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -115,9 +124,15 @@ class ViewController: UIViewController {
         print("카테고리 \(sender.tag) \(Category.asArray[sender.tag-1])")
         if sender.isSelected {
             sender.isSelected = false
+            filterArr.remove(at: filterArr.firstIndex(of: sender.tag)!)
         } else {
             sender.isSelected = true
+            filterArr.append(sender.tag)
         }
+        print(filterArr)
+        print(data.filter {filterArr.allSatisfy($0.category.contains) })
+        
+        
     }
 //    @objc func sendFilterButtonTag(_ sender:UIButton) {
 //        print("카테고리 \(sender.tag) \(Category.asArray[sender.tag-1])")
