@@ -24,7 +24,15 @@ class NaverMapTest: UIViewController , CLLocationManagerDelegate {
         getCoordinate()
         setMap()
 //        mapView.logoMargin = UIEdgeInsets(top: 0, left: 30, bottom: 200, right: 0)
+        print("여기하는중임?")
         locationManager.delegate = self
+        
+        let marker = NMFMarker()
+        marker.position = NMGLatLng(lat: 37.5670135, lng: 126.9783740)
+        marker.iconImage = NMFOverlayImage(
+        marker.mapView = mapView
+        
+        
     }
 }
 
