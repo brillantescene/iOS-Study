@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F1322A42E75BEDDF258D3AC /* Pods_UIViewAnimationTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8E185B660EA25AE9B2A8000 /* Pods_UIViewAnimationTest.framework */; };
 		6B74C8112733BF7700BC6115 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B74C8102733BF7700BC6115 /* AppDelegate.swift */; };
 		6B74C8132733BF7700BC6115 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B74C8122733BF7700BC6115 /* SceneDelegate.swift */; };
 		6B74C8152733BF7700BC6115 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B74C8142733BF7700BC6115 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5DB766330B631469353EAA8D /* Pods-UIViewAnimationTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIViewAnimationTest.debug.xcconfig"; path = "Target Support Files/Pods-UIViewAnimationTest/Pods-UIViewAnimationTest.debug.xcconfig"; sourceTree = "<group>"; };
 		6B74C80D2733BF7700BC6115 /* UIViewAnimationTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIViewAnimationTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B74C8102733BF7700BC6115 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B74C8122733BF7700BC6115 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		6B74C8192733BF7B00BC6115 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B74C81C2733BF7B00BC6115 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6B74C81E2733BF7B00BC6115 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A06A1961F989056D75F8AF1B /* Pods-UIViewAnimationTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIViewAnimationTest.release.xcconfig"; path = "Target Support Files/Pods-UIViewAnimationTest/Pods-UIViewAnimationTest.release.xcconfig"; sourceTree = "<group>"; };
+		B8E185B660EA25AE9B2A8000 /* Pods_UIViewAnimationTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIViewAnimationTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F1322A42E75BEDDF258D3AC /* Pods_UIViewAnimationTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				6B74C80F2733BF7700BC6115 /* UIViewAnimationTest */,
 				6B74C80E2733BF7700BC6115 /* Products */,
+				DED85EFB909D469B8531371E /* Pods */,
+				EBCF58A0E3035C56667B931B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = UIViewAnimationTest;
 			sourceTree = "<group>";
 		};
+		DED85EFB909D469B8531371E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5DB766330B631469353EAA8D /* Pods-UIViewAnimationTest.debug.xcconfig */,
+				A06A1961F989056D75F8AF1B /* Pods-UIViewAnimationTest.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EBCF58A0E3035C56667B931B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B8E185B660EA25AE9B2A8000 /* Pods_UIViewAnimationTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6B74C8212733BF7B00BC6115 /* Build configuration list for PBXNativeTarget "UIViewAnimationTest" */;
 			buildPhases = (
+				B18075DB835C3D882635B866 /* [CP] Check Pods Manifest.lock */,
 				6B74C8092733BF7700BC6115 /* Sources */,
 				6B74C80A2733BF7700BC6115 /* Frameworks */,
 				6B74C80B2733BF7700BC6115 /* Resources */,
+				E252D23C50C589DE019AF687 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B18075DB835C3D882635B866 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UIViewAnimationTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E252D23C50C589DE019AF687 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UIViewAnimationTest/Pods-UIViewAnimationTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UIViewAnimationTest/Pods-UIViewAnimationTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UIViewAnimationTest/Pods-UIViewAnimationTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6B74C8092733BF7700BC6115 /* Sources */ = {
@@ -284,6 +353,7 @@
 		};
 		6B74C8222733BF7B00BC6115 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DB766330B631469353EAA8D /* Pods-UIViewAnimationTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -311,6 +381,7 @@
 		};
 		6B74C8232733BF7B00BC6115 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A06A1961F989056D75F8AF1B /* Pods-UIViewAnimationTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
