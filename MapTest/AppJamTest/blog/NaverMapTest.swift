@@ -15,24 +15,38 @@ class NaverMapTest: UIViewController , CLLocationManagerDelegate {
     @IBOutlet var mapView: NMFMapView!
     @IBOutlet var locationBtn: UIButton!
     
+    @IBOutlet var marker: UIImageView!
+    @IBOutlet var addressLabel: UILabel!
+    
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.showLegalNotice()
         SetLocationBtn()
-        getCoordinate()
+//        getCoordinate()
         setMap()
+        
+        // naver 로고 위치 조정
 //        mapView.logoMargin = UIEdgeInsets(top: 0, left: 30, bottom: 200, right: 0)
-        print("여기하는중임?")
+        
         locationManager.delegate = self
         
-        let marker = NMFMarker()
-        marker.position = NMGLatLng(lat: 37.5670135, lng: 126.9783740)
-        marker.iconImage = NMFOverlayImage(
-        marker.mapView = mapView
+        let naverMarker = NMFMarker()
+        naverMarker.position = NMGLatLng(lat: 37.5666102, lng: 126.9783881)
+        naverMarker.mapView = mapView
         
-        
+        mapView.addCameraDelegate(delegate: self)
+    }
+    
+    func update() {
+        let coord = mapView.projection.latlng(from: marker.center)
+        addressLabel.text = String(format: "지도좌표: (%.5f, %.5f)", coord.lat, coord.lng)
+    }
+}
+extension NaverMapTest: NMFMapViewCameraDelegate {
+    func mapViewCameraIdle(_ mapView: NMFMapView) {
+        update()
     }
 }
 

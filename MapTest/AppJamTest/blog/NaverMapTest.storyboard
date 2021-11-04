@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ww2-ia-NaV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ww2-ia-NaV">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TEg-Th-8sd" customClass="NMFMapView">
-                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="634"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTc-YK-goE">
@@ -26,19 +27,49 @@
                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                 <state key="normal" title="direction"/>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="marker" translatesAutoresizingMaskIntoConstraints="NO" id="VMm-PG-Qta">
+                                <rect key="frame" x="219" y="396" width="61" height="66"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ovj-59-D09">
+                                <rect key="frame" x="16" y="686" width="343" height="59"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qmy-AF-JJM">
+                                        <rect key="frame" x="19" y="19" width="0.0" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="qmy-AF-JJM" secondAttribute="bottom" constant="19" id="4MD-Wd-QBK"/>
+                                    <constraint firstItem="qmy-AF-JJM" firstAttribute="top" secondItem="Ovj-59-D09" secondAttribute="top" constant="19" id="E5O-ZC-b2x"/>
+                                    <constraint firstItem="qmy-AF-JJM" firstAttribute="leading" secondItem="Ovj-59-D09" secondAttribute="leading" constant="19" id="qe2-cE-T7l"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eMZ-WY-GzP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Ovj-59-D09" firstAttribute="leading" secondItem="eMZ-WY-GzP" secondAttribute="leading" constant="16" id="0uP-wp-emC"/>
+                            <constraint firstItem="eMZ-WY-GzP" firstAttribute="bottom" secondItem="Ovj-59-D09" secondAttribute="bottom" constant="33" id="62x-JY-wAN"/>
+                            <constraint firstItem="eMZ-WY-GzP" firstAttribute="trailing" secondItem="VMm-PG-Qta" secondAttribute="trailing" constant="95" id="8qm-FX-hUv"/>
+                            <constraint firstItem="eMZ-WY-GzP" firstAttribute="trailing" secondItem="Ovj-59-D09" secondAttribute="trailing" constant="16" id="MrW-V4-2jo"/>
                             <constraint firstItem="TEg-Th-8sd" firstAttribute="leading" secondItem="eMZ-WY-GzP" secondAttribute="leading" id="Pm4-2g-4Dy"/>
+                            <constraint firstItem="VMm-PG-Qta" firstAttribute="top" secondItem="eMZ-WY-GzP" secondAttribute="top" constant="352" id="Qpj-Ze-Zck"/>
                             <constraint firstItem="TEg-Th-8sd" firstAttribute="top" secondItem="eMZ-WY-GzP" secondAttribute="top" id="dWX-mJ-dql"/>
                             <constraint firstItem="eMZ-WY-GzP" firstAttribute="trailing" secondItem="TEg-Th-8sd" secondAttribute="trailing" id="eCw-YP-dW2"/>
-                            <constraint firstItem="eMZ-WY-GzP" firstAttribute="bottom" secondItem="TEg-Th-8sd" secondAttribute="bottom" id="vDc-Tn-3mj"/>
+                            <constraint firstAttribute="bottom" secondItem="VMm-PG-Qta" secondAttribute="bottom" constant="350" id="oFu-1L-0dp"/>
+                            <constraint firstItem="Ovj-59-D09" firstAttribute="top" secondItem="TEg-Th-8sd" secondAttribute="bottom" constant="8" id="pI1-yI-FEw"/>
+                            <constraint firstItem="VMm-PG-Qta" firstAttribute="leading" secondItem="eMZ-WY-GzP" secondAttribute="leading" constant="219" id="tIw-ne-h1x"/>
+                            <constraint firstItem="eMZ-WY-GzP" firstAttribute="bottom" secondItem="TEg-Th-8sd" secondAttribute="bottom" constant="100" id="vDc-Tn-3mj"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addressLabel" destination="qmy-AF-JJM" id="Tto-IF-jaq"/>
                         <outlet property="locationBtn" destination="lTc-YK-goE" id="LgK-7c-9bu"/>
                         <outlet property="mapView" destination="TEg-Th-8sd" id="cpz-Mb-WbM"/>
+                        <outlet property="marker" destination="VMm-PG-Qta" id="Tcs-hT-vDq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pt8-eM-bbF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -47,6 +78,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="marker" width="178" height="206"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
