@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="L7D-ZZ-YsT">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Naver TestVC-->
+        <scene sceneID="oTd-Hc-Z8t">
+            <objects>
+                <viewController id="L7D-ZZ-YsT" customClass="NaverTestVC" customModule="AppJamTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Fc-Cp-bnM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rX9-yA-K6J" customClass="NMFMapView">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nuX-9q-fM9">
+                                <rect key="frame" x="304" y="506" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qbr-M9-87Z">
+                                <rect key="frame" x="67" y="658" width="240" height="112"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NA7-DX-6Y7">
+                                <rect key="frame" x="291" y="568" width="68" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="btnCurrentLocation"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aBh-Zq-l8g"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aBh-Zq-l8g" firstAttribute="trailing" secondItem="rX9-yA-K6J" secondAttribute="trailing" id="KvD-sC-P5i"/>
+                            <constraint firstItem="rX9-yA-K6J" firstAttribute="top" secondItem="aBh-Zq-l8g" secondAttribute="top" id="Quo-mn-bry"/>
+                            <constraint firstItem="rX9-yA-K6J" firstAttribute="leading" secondItem="aBh-Zq-l8g" secondAttribute="leading" id="YyF-Nh-y7R"/>
+                            <constraint firstItem="aBh-Zq-l8g" firstAttribute="bottom" secondItem="rX9-yA-K6J" secondAttribute="bottom" id="ce5-cK-2YN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cardView" destination="Qbr-M9-87Z" id="hNp-wI-LSE"/>
+                        <outlet property="locationBtn" destination="nuX-9q-fM9" id="jdx-an-xfi"/>
+                        <outlet property="mapView" destination="rX9-yA-K6J" id="eco-3Q-bkP"/>
+                        <outlet property="myBtn" destination="NA7-DX-6Y7" id="RKr-50-rbk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="THM-hO-YhQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="67.980295566502463"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="btnCurrentLocation" width="68" height="68"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

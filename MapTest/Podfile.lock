@@ -1,0 +1,20 @@
+PODS:
+  - NMapsMap (3.12.0)
+  - SwiftKeychainWrapper (4.0.1)
+
+DEPENDENCIES:
+  - NMapsMap
+  - SwiftKeychainWrapper
+
+SPEC REPOS:
+  trunk:
+    - NMapsMap
+    - SwiftKeychainWrapper
+
+SPEC CHECKSUMS:
+  NMapsMap: b04a3439eac78e52f48cb5a9e4ab994be1bcfc80
+  SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
+
+PODFILE CHECKSUM: 4377d035eef30a147bac74708da6d002fb3dcc66
+
+COCOAPODS: 1.10.1
