@@ -9,21 +9,35 @@ import UIKit
 import Then
 import SnapKit
 
-class CategoryUIView: UIView {
+class CategoryUIVIew: UIViewController {
     
 //    let label = UILabel().then {
 //        $0.text = "안뇽"
 //    }
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//    }
+//
+//    required init?(coder: NSCoder) {
+//        super.init(coder: coder)
+//    }
+    
+    let newView = UIView().then {
+        $0.backgroundColor = .white
     }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print("hi")
+        
+        let safeArea = view.safeAreaLayoutGuide
+        
+        view.addSubview(newView)
+        
+        newView.snp.makeConstraints {
+            $0.center.equalTo(safeArea)
+            $0.width.height.equalTo(300)
+        }
     }
-    
-    
-    
     
     
 }

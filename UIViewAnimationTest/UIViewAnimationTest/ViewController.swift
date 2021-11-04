@@ -23,11 +23,14 @@ class ViewController: UIViewController {
         $0.backgroundColor = .clear
     }
 
+    let category = CategoryViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addContentView()
         setAutoLayout()
         setAction()
+        
     }
 
 
@@ -63,7 +66,14 @@ class ViewController: UIViewController {
     
     @objc func tapTopButton(_ sender:UIButton) {
         print("누름")
+        guard let categoryVC = UIStoryboard(name: "Category", bundle: nil)
+                .instantiateViewController(withIdentifier: "CategoryViewController") as? CategoryViewController else {
+            return
+        }
         
+        categoryVC.modalPresentationStyle = .overFullScreen
+        categoryVC.modalTransitionStyle = .crossDissolve
+        present(categoryVC, animated: true, completion: nil)
     }
 }
 
