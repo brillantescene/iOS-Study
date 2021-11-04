@@ -14,6 +14,7 @@
 		6B74C8182733BF7700BC6115 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B74C8162733BF7700BC6115 /* Main.storyboard */; };
 		6B74C81A2733BF7B00BC6115 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B74C8192733BF7B00BC6115 /* Assets.xcassets */; };
 		6B74C81D2733BF7B00BC6115 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B74C81B2733BF7B00BC6115 /* LaunchScreen.storyboard */; };
+		6B74C8252733CB5B00BC6115 /* CategoryUIVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B74C8242733CB5B00BC6115 /* CategoryUIVIew.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		6B74C8192733BF7B00BC6115 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B74C81C2733BF7B00BC6115 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6B74C81E2733BF7B00BC6115 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B74C8242733CB5B00BC6115 /* CategoryUIVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryUIVIew.swift; sourceTree = "<group>"; };
 		A06A1961F989056D75F8AF1B /* Pods-UIViewAnimationTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIViewAnimationTest.release.xcconfig"; path = "Target Support Files/Pods-UIViewAnimationTest/Pods-UIViewAnimationTest.release.xcconfig"; sourceTree = "<group>"; };
 		B8E185B660EA25AE9B2A8000 /* Pods_UIViewAnimationTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIViewAnimationTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -66,6 +68,7 @@
 				6B74C8102733BF7700BC6115 /* AppDelegate.swift */,
 				6B74C8122733BF7700BC6115 /* SceneDelegate.swift */,
 				6B74C8142733BF7700BC6115 /* ViewController.swift */,
+				6B74C8242733CB5B00BC6115 /* CategoryUIVIew.swift */,
 				6B74C8162733BF7700BC6115 /* Main.storyboard */,
 				6B74C8192733BF7B00BC6115 /* Assets.xcassets */,
 				6B74C81B2733BF7B00BC6115 /* LaunchScreen.storyboard */,
@@ -80,7 +83,6 @@
 				5DB766330B631469353EAA8D /* Pods-UIViewAnimationTest.debug.xcconfig */,
 				A06A1961F989056D75F8AF1B /* Pods-UIViewAnimationTest.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -209,6 +211,7 @@
 			files = (
 				6B74C8152733BF7700BC6115 /* ViewController.swift in Sources */,
 				6B74C8112733BF7700BC6115 /* AppDelegate.swift in Sources */,
+				6B74C8252733CB5B00BC6115 /* CategoryUIVIew.swift in Sources */,
 				6B74C8132733BF7700BC6115 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
