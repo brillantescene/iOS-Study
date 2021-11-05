@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B3ECC182734D15800177F9F /* NewAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3ECC172734D15800177F9F /* NewAppDelegate.swift */; };
 		6B6175732567C32E00FC71B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6175722567C32E00FC71B6 /* AppDelegate.swift */; };
 		6B6175752567C32E00FC71B6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6175742567C32E00FC71B6 /* SceneDelegate.swift */; };
 		6B6175772567C32E00FC71B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6175762567C32E00FC71B6 /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6B3ECC172734D15800177F9F /* NewAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAppDelegate.swift; sourceTree = "<group>"; };
 		6B61756F2567C32E00FC71B6 /* TabBarTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabBarTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B6175722567C32E00FC71B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B6175742567C32E00FC71B6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			children = (
 				6B6175722567C32E00FC71B6 /* AppDelegate.swift */,
 				6B6175742567C32E00FC71B6 /* SceneDelegate.swift */,
+				6B3ECC172734D15800177F9F /* NewAppDelegate.swift */,
 				6B61757B2567C33000FC71B6 /* Assets.xcassets */,
 				6B6175892567D2BF00FC71B6 /* Storyboards */,
 			);
@@ -214,6 +217,7 @@
 				6B6175772567C32E00FC71B6 /* ViewController.swift in Sources */,
 				6B61759C2567D41100FC71B6 /* SearchVC.swift in Sources */,
 				6B6175AF2567DACA00FC71B6 /* NotiVC.swift in Sources */,
+				6B3ECC182734D15800177F9F /* NewAppDelegate.swift in Sources */,
 				6B6175992567D3FF00FC71B6 /* HomeVC.swift in Sources */,
 				6B6175B52567DC1400FC71B6 /* StorageVC.swift in Sources */,
 				6B6175732567C32E00FC71B6 /* AppDelegate.swift in Sources */,
