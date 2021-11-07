@@ -16,31 +16,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="emoji test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pd1-kd-FgC">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="emoji test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pd1-kd-FgC">
                                 <rect key="frame" x="20" y="72" width="78" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yBx-NT-Nyb" customClass="EmojiTextField" customModule="TextFieldTest" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yBx-NT-Nyb" customClass="EmojiTextField" customModule="TextFieldTest" customModuleProvider="target">
                                 <rect key="frame" x="20" y="114" width="121" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="B7g-xC-Qls"/>
+                                    <constraint firstAttribute="width" constant="121" id="sn6-b6-nEs"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Authentication number test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fyw-7k-uXi">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Authentication number test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fyw-7k-uXi">
                                 <rect key="frame" x="20" y="202" width="218" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pRM-ZA-JNt" customClass="OneTimeCodeTextField" customModule="TextFieldTest" customModuleProvider="target">
+                                <rect key="frame" x="20" y="238" width="335" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="mpS-ne-gxg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Fyw-7k-uXi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Oan-HN-pIJ"/>
+                            <constraint firstItem="pRM-ZA-JNt" firstAttribute="top" secondItem="Fyw-7k-uXi" secondAttribute="bottom" constant="15" id="WOP-5v-XQ8"/>
+                            <constraint firstItem="pRM-ZA-JNt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="dtl-Xq-iIF"/>
+                            <constraint firstItem="pd1-kd-FgC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="eX7-Xz-qwI"/>
+                            <constraint firstItem="yBx-NT-Nyb" firstAttribute="top" secondItem="pd1-kd-FgC" secondAttribute="bottom" constant="21" id="oan-N7-aa5"/>
+                            <constraint firstItem="pd1-kd-FgC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="28" id="opy-it-RPB"/>
+                            <constraint firstItem="yBx-NT-Nyb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="tGD-zX-CuI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pRM-ZA-JNt" secondAttribute="trailing" constant="20" id="xqw-Fp-M4O"/>
+                            <constraint firstItem="Fyw-7k-uXi" firstAttribute="top" secondItem="yBx-NT-Nyb" secondAttribute="bottom" constant="54" id="zY4-ro-vUN"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="codeTextField" destination="pRM-ZA-JNt" id="nR7-eH-lMC"/>
                         <outlet property="emojiTextField" destination="yBx-NT-Nyb" id="FOk-EZ-fVd"/>
                     </connections>
                 </viewController>
