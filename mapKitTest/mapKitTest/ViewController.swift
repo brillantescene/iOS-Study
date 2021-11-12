@@ -25,6 +25,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         self.setInitialLocation()
         self.setCurrentLocation()
         self.setZoom()
+        self.setAnnotation()
+    }
+    // MARK: - 마커 추가
+    func setAnnotation() {
+        let marker = Store(
+            title: "밤가시 버거",
+            locationName: "경기도 고양시 일산동구 정발산동 일산로372번길 46",
+            discipline: "햄버거",
+            coordinate: CLLocationCoordinate2D(latitude: 37.66906773682083, longitude: 126.78460869875774))
+        mapView.addAnnotation(marker)
     }
     
     // MARK: - 초기 위치 설정
@@ -35,7 +45,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     
     // MARK: - 지도 설정
     func setMap() {
-        locationManager.delegate = self
         mapView.delegate = self
         mapView.mapType = MKMapType.standard
         mapView.showsUserLocation = true // 위치 보기 설정
@@ -43,6 +52,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     }
     
     func setCurrentLocation() {
+        locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization() //권한요청
         locationManager.desiredAccuracy = kCLLocationAccuracyBest // 위치 정보 정확도
         locationManager.startUpdatingLocation() // 위치 업데이트 시작
