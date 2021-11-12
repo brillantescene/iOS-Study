@@ -9,6 +9,7 @@ import UIKit
 import MapKit
 
 extension ViewController: MKMapViewDelegate {
+    /**
     // 1. mapView(_:viewFor:) 함수는 map에 annotation이 추가될 때마다 호출됨
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         /** 2.
@@ -35,4 +36,5 @@ extension ViewController: MKMapViewDelegate {
         
         return view
     }
+     */
 }

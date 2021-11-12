@@ -21,19 +21,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     private var stores: [Store] = [Store(title: "밤가시 버거",
                                          locationName: "경기도 고양시 일산동구 정발산동 일산로372번길 46",
-                                         discipline: "햄버거",
+                                         discipline: "👀",
                                          coordinate: CLLocationCoordinate2D(latitude: 37.66906773682083, longitude: 126.78460869875774)),
                                          Store(title: "2리 식당",
                                                locationName: "경기도 고양시 일산동구 일산동구 정발산동",
-                                               discipline: "햄버거",
+                                               discipline: "🥰",
                                                coordinate: CLLocationCoordinate2D(latitude: 37.66956064613412, longitude: 126.78517534875819)),
                                     Store(title: "재이식당",
                                           locationName: "경기도 고양시 일산동구 정발산동 1286-11",
-                                          discipline: "햄버거",
+                                          discipline: "👍",
                                           coordinate: CLLocationCoordinate2D(latitude: 37.670800813026574, longitude: 126.78361656501401)),
                                     Store(title: "프리커피",
                                           locationName: "경기도 고양시 일산동구 마두1동 880-11",
-                                          discipline: "햄버거",
+                                          discipline: "😙",
                                           coordinate: CLLocationCoordinate2D(latitude: 37.66225049053905, longitude: 126.78828553341091))
                                          ]
 
@@ -44,8 +44,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         self.setCurrentLocation()
         self.setZoom()
         self.setAnnotation()
-//        self.loadInitialData()
-//        mapView.addAnnotations(stores)
     }
     // MARK: - 마커 추가
     func setAnnotation() {
@@ -56,6 +54,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 //            coordinate: CLLocationCoordinate2D(latitude: 37.66906773682083, longitude: 126.78460869875774))
 //        mapView.addAnnotation(marker)
         
+        mapView.register(StoreView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
         mapView.addAnnotations(stores)
     }
     

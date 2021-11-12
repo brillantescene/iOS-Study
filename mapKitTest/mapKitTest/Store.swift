@@ -46,4 +46,27 @@ class Store: NSObject, MKAnnotation {
         
         super.init()
     }
+    
+    var markerTintColor: UIColor {
+        switch discipline {
+        case "food":
+            return .systemPink
+        case "cafe":
+            return .yellow
+        default:
+            return .white
+        }
+    }
+    var image: UIImage {
+        guard let name = discipline else {
+            return #imageLiteral(resourceName: "ghost")
+        }
+        
+        switch name {
+        case "food":
+            return #imageLiteral(resourceName: "ghost")
+        default:
+            return #imageLiteral(resourceName: "ghost")
+        }
+    }
 }
