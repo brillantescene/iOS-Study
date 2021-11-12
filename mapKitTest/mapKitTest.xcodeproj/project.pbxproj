@@ -22,6 +22,7 @@
 		6B34B9FC273E1C2700E23947 /* MKMapView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+Extension.swift"; sourceTree = "<group>"; };
 		6B34B9FE273E302900E23947 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		6B34BA00273E356B00E23947 /* ViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension.swift"; sourceTree = "<group>"; };
+		6B34BA02273E3EA200E23947 /* PublicStore.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = PublicStore.geojson; sourceTree = "<group>"; };
 		6B8B79B32738D8F800DB26F4 /* mapKitTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mapKitTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B8B79B62738D8F800DB26F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B8B79B82738D8F800DB26F4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +68,7 @@
 				6B8B79BA2738D8F800DB26F4 /* ViewController.swift */,
 				6B34BA00273E356B00E23947 /* ViewController+Extension.swift */,
 				6B34B9FE273E302900E23947 /* Store.swift */,
+				6B34BA02273E3EA200E23947 /* PublicStore.geojson */,
 				6B34B9FC273E1C2700E23947 /* MKMapView+Extension.swift */,
 				6B8B79BC2738D8F800DB26F4 /* Main.storyboard */,
 				6B8B79BF2738D8FE00DB26F4 /* Assets.xcassets */,

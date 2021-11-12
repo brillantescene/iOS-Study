@@ -1,0 +1,73 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "location": "경기도 고양시 일산동구 정발산동 일산로372번길 46",
+                "latitude": "37.66906773682083",
+                "longitude": "126.78460869875774",
+                "category": "food",
+                "title": "밤가시 버거",
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    126.78460869875774,
+                    37.66906773682083
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "location": "경기도 고양시 일산동구 일산동구 정발산동",
+                "latitude": "37.66956064613412",
+                "longitude": "126.78517534875819",
+                "category": "food",
+                "title": "2리 식당",
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    126.78517534875819,
+                    37.66956064613412
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "location": "경기도 고양시 일산동구 정발산동 1286-11",
+                "latitude": "37.670800813026574",
+                "longitude": "126.78361656501401",
+                "category": "food",
+                "title": "재이식당",
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    126.78361656501401,
+                    37.670800813026574
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "location": "경기도 고양시 일산동구 마두1동 880-11",
+                "latitude": "37.66225049053905",
+                "longitude": "126.78828553341091",
+                "category": "coffee",
+                "title": "프리커피",
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    126.78828553341091,
+                    37.66225049053905
+                ]
+            }
+        }
+    ]
+}
