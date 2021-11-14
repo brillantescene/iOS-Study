@@ -31,7 +31,8 @@ class MarkerImageView: UIImageView {
         }
         
         label.snp.makeConstraints {
-            $0.center.equalTo(self)
+            $0.top.equalTo(self).offset(5)
+            $0.left.equalTo(self).offset(7)
         }
     }
 }

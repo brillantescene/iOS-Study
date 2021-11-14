@@ -39,7 +39,6 @@ class StoreView: MKMarkerAnnotationView {
         imageView.snp.makeConstraints {
             $0.top.left.right.bottom.equalTo(self)
         }
-
     }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -50,15 +49,13 @@ class StoreView: MKMarkerAnnotationView {
             guard let store = newValue as? Store else {
                 return
             }
+//            animatesWhenAdded = true
 //            canShowCallout = true
 //            calloutOffset = CGPoint(x: -5, y: 5)
 //            rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
 
-
-            // 2.
-//            image = store.image
+            glyphImage = UIImage(named: "empty")
             markerTintColor = store.markerTintColor
-
             if let letter = store.discipline?.first {
                 imageView.label.text = String(letter)
             }
