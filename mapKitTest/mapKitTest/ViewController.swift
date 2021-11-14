@@ -54,8 +54,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 //            coordinate: CLLocationCoordinate2D(latitude: 37.66906773682083, longitude: 126.78460869875774))
 //        mapView.addAnnotation(marker)
         
-        mapView.register(StoreView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
+//        mapView.register(StoreMarkerView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
         mapView.addAnnotations(stores)
+        mapView.register(StoreView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
     }
     
     // MARK: - 데이터 초기화

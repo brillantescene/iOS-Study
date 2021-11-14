@@ -54,9 +54,10 @@ class Store: NSObject, MKAnnotation {
         case "cafe":
             return .yellow
         default:
-            return .white
+            return .clear
         }
     }
+    
     var image: UIImage {
         guard let name = discipline else {
             return #imageLiteral(resourceName: "ghost")
@@ -66,7 +67,7 @@ class Store: NSObject, MKAnnotation {
         case "food":
             return #imageLiteral(resourceName: "ghost")
         default:
-            return #imageLiteral(resourceName: "ghost")
+            return #imageLiteral(resourceName: "gogog")
         }
     }
 }

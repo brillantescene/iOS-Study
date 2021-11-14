@@ -9,6 +9,17 @@ import UIKit
 import MapKit
 
 extension ViewController: MKMapViewDelegate {
+//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+//        print("여기 안들어오니?")
+//        var annotationView: MKAnnotationView?
+//        //원하는 위치에 넣을 이미지뷰
+//        let annotationimageView = MarkerImageView(frame: CGRect(x: 0, y: 0, width: 56, height: 56))
+//        annotationimageView.image = UIImage(named: "gogog")
+//        annotationimageView.label.text =  "🥰"
+//
+//        annotationView?.addSubview(annotationimageView)
+//        return annotationView
+//    }
     /**
     // 1. mapView(_:viewFor:) 함수는 map에 annotation이 추가될 때마다 호출됨
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
