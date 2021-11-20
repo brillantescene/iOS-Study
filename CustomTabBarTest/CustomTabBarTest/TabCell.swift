@@ -1,5 +1,5 @@
 //
-//  TabLabel.swift
+//  TabCell.swift
 //  CustomTabBarTest
 //
 //  Created by ✨EUGENE✨ on 2021/11/21.
@@ -9,7 +9,9 @@ import UIKit
 import Then
 import SnapKit
 
-class TabLabel: UIView {
+class TabCell: UICollectionViewCell {
+    
+    static let identifier = "TabCell"
     
     let WIDTH = UIScreen.main.bounds.width / 2
     let HEIGHT = 29
@@ -25,6 +27,7 @@ class TabLabel: UIView {
         super.init(frame: frame)
         addContentView()
         setAutoLayout()
+        print("안나와?")
     }
     
     required init?(coder: NSCoder) {

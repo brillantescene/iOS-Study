@@ -11,32 +11,25 @@ import SnapKit
 
 class TabUIView: UIView {
     
-    let WIDTH = UIScreen.main.bounds.width
-    let HEIGHT = 29
-    
-    let firstTabLabel = UILabel().then {
-        $0.text = "내가 쓴 흔적"
-        $0.textColor = .blue
+    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        $0.collectionViewLayout = layout
+        $0.showsHorizontalScrollIndicator = false
+        $0.register(TabCell.self, forCellWithReuseIdentifier: TabCell.identifier)
     }
     
-    let secondTabLabel = UILabel().then {
-        $0.text = "내가 찜한 장소"
-        $0.textColor = .gray
-    }
+    private let WIDTH = UIScreen.main.bounds.width
+    private let HEIGHT = 29
     
-    let firstUnderBar = UIView().then {
-        $0.backgroundColor = .blue
-    }
-    
-    let secondUnderBar = UIView().then {
-        $0.backgroundColor = .red
-        $0.isHidden = true
-    }
+    private let tabTypes = ["내가 쓴 흔적", "내가 찜한 장소"]
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         addContentView()
         setAutoLayout()
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
     
     required init?(coder: NSCoder) {
@@ -44,10 +37,7 @@ class TabUIView: UIView {
     }
     
     private func addContentView() {
-        self.addSubview(firstTabLabel)
-        self.addSubview(firstUnderBar)
-        self.addSubview(secondTabLabel)
-        self.addSubview(secondUnderBar)
+        self.addSubview(collectionView)
     }
     
     private func setAutoLayout() {
@@ -55,25 +45,38 @@ class TabUIView: UIView {
             $0.width.equalTo(self.WIDTH)
             $0.height.equalTo(self.HEIGHT)
         }
-        firstTabLabel.snp.makeConstraints {
-            $0.top.equalTo(self)
-            $0.left.equalTo(self).offset(20)
-        }
-        firstUnderBar.snp.makeConstraints {
-            $0.bottom.equalTo(self)
-            $0.left.equalTo(firstTabLabel.snp.left)
-            $0.width.equalTo(firstTabLabel.snp.width)
-            $0.height.equalTo(2)
-        }
-        secondTabLabel.snp.makeConstraints {
-            $0.top.equalTo(self)
-            $0.left.equalTo(self).offset(self.WIDTH / 2)
-        }
-        secondUnderBar.snp.makeConstraints {
-            $0.bottom.equalTo(self)
-            $0.left.equalTo(secondTabLabel.snp.left)
-            $0.width.equalTo(firstTabLabel.snp.width)
-            $0.height.equalTo(2)
+        collectionView.snp.makeConstraints {
+            $0.top.left.right.bottom.equalTo(self)
         }
     }
+}
+extension TabUIView: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TabCell.identifier, for: indexPath) as? TabCell else {
+            return UICollectionViewCell()
+        }
+        cell.tabLabel.text = self.tabTypes[indexPath.row]
+        return cell
+    }
+    
+    
+}
+extension TabUIView: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let cellHeight = collectionView.frame.height
+        let cellWidth = collectionView.frame.width / 2
+        return CGSize(width: cellWidth, height: cellHeight)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+    
 }
