@@ -18,16 +18,16 @@ class TabCell: UICollectionViewCell {
     
     let tabLabel = UILabel().then {
         $0.text = "내가 쓴 흔적"
-        $0.textColor = .blue
+        $0.textColor = .gray
     }
     let underBar = UIView().then {
         $0.backgroundColor = .blue
+        $0.isHidden = true
     }
     override init(frame: CGRect) {
         super.init(frame: frame)
         addContentView()
         setAutoLayout()
-        print("안나와?")
     }
     
     required init?(coder: NSCoder) {

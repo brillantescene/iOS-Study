@@ -66,6 +66,7 @@ extension TabUIView: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         cell.tabLabel.text = self.tabTypes[indexPath.row]
+        
         return cell
     }
     
@@ -92,5 +93,16 @@ extension TabUIView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         delegate?.scrollToIndex(to: indexPath.row)
         print(indexPath.row)
+        if let cell = collectionView.cellForItem(at: indexPath) as? TabCell {
+            cell.tabLabel.textColor = .blue
+            cell.underBar.isHidden = false
+        }
+        
+    }
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath) as? TabCell {
+            cell.tabLabel.textColor = .gray
+            cell.underBar.isHidden = true
+        }
     }
 }

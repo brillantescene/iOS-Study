@@ -16,12 +16,12 @@ class ViewController: UIViewController {
         $0.collectionViewLayout = layout
         $0.showsHorizontalScrollIndicator = false
         $0.isPagingEnabled = true
+        $0.isScrollEnabled = false
         $0.register(ContentsCollectionViewCell.self, forCellWithReuseIdentifier: ContentsCollectionViewCell.identifier)
     }
     
     // 임시
     private let tabTypes = ["내가 쓴 흔적", "내가 찜한 장소"]
-//    var index = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +42,8 @@ class ViewController: UIViewController {
         
         collectionView.dataSource = self
         collectionView.delegate = self
+        
+        
     }
 }
 extension ViewController: UICollectionViewDataSource {
