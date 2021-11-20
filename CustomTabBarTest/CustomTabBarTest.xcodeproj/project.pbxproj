@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		074F78516D9B4053A051B5BA /* Pods_CustomTabBarTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4274BA19D4EEF3F61831A4D8 /* Pods_CustomTabBarTest.framework */; };
 		6B1B77F227493CFF00BD9773 /* TabUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B77F127493CFF00BD9773 /* TabUIView.swift */; };
+		6B1B77F42749467E00BD9773 /* TabLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1B77F32749467E00BD9773 /* TabLabel.swift */; };
 		6B38CB1826DF5BAA0089100E /* ContentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B38CB1626DF5BAA0089100E /* ContentsCollectionViewCell.swift */; };
 		6B38CB1926DF5BAA0089100E /* ContentsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B38CB1726DF5BAA0089100E /* ContentsCollectionViewCell.xib */; };
 		6B7046BC26DDD6B500F52CBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7046BB26DDD6B500F52CBA /* AppDelegate.swift */; };
@@ -27,6 +28,7 @@
 /* Begin PBXFileReference section */
 		4274BA19D4EEF3F61831A4D8 /* Pods_CustomTabBarTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CustomTabBarTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B1B77F127493CFF00BD9773 /* TabUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabUIView.swift; sourceTree = "<group>"; };
+		6B1B77F32749467E00BD9773 /* TabLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabLabel.swift; sourceTree = "<group>"; };
 		6B38CB1626DF5BAA0089100E /* ContentsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsCollectionViewCell.swift; sourceTree = "<group>"; };
 		6B38CB1726DF5BAA0089100E /* ContentsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentsCollectionViewCell.xib; sourceTree = "<group>"; };
 		6B7046B826DDD6B500F52CBA /* CustomTabBarTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomTabBarTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,7 +66,6 @@
 				8020F3375D8EAAC2B4D4BE56 /* Pods-CustomTabBarTest.debug.xcconfig */,
 				FFBF6E6B6E2D7910E2751D58 /* Pods-CustomTabBarTest.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -113,6 +114,7 @@
 				6B7046BB26DDD6B500F52CBA /* AppDelegate.swift */,
 				6B7046BD26DDD6B500F52CBA /* SceneDelegate.swift */,
 				6B1B77F127493CFF00BD9773 /* TabUIView.swift */,
+				6B1B77F32749467E00BD9773 /* TabLabel.swift */,
 				6B1B77F027493CB800BD9773 /* New Group */,
 				6B7046C426DDD6B800F52CBA /* Assets.xcassets */,
 				6B7046C626DDD6B800F52CBA /* LaunchScreen.storyboard */,
@@ -263,6 +265,7 @@
 				6B7046BC26DDD6B500F52CBA /* AppDelegate.swift in Sources */,
 				6B38CB1826DF5BAA0089100E /* ContentsCollectionViewCell.swift in Sources */,
 				6B7046BE26DDD6B500F52CBA /* SceneDelegate.swift in Sources */,
+				6B1B77F42749467E00BD9773 /* TabLabel.swift in Sources */,
 				6B7046DB26DDF73F00F52CBA /* TabBarView.swift in Sources */,
 				6B7046D526DDDC1D00F52CBA /* TabViewModel.swift in Sources */,
 			);

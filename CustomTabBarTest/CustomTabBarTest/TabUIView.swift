@@ -20,8 +20,8 @@ class TabUIView: UIView {
     }
     
     let secondTabLabel = UILabel().then {
-        $0.text = "내가 쓴 흔적"
-        $0.textColor = .red
+        $0.text = "내가 찜한 장소"
+        $0.textColor = .gray
     }
     
     let firstUnderBar = UIView().then {
@@ -30,6 +30,7 @@ class TabUIView: UIView {
     
     let secondUnderBar = UIView().then {
         $0.backgroundColor = .red
+        $0.isHidden = true
     }
     
     override init(frame: CGRect) {
