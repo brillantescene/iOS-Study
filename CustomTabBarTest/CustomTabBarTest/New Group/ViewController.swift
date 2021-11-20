@@ -12,11 +12,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var categoryView: TabBarView!
     @IBOutlet weak var contentsCollectionView: UICollectionView!
     
+    let tab = TabUIView()
+    
     var tabVM = TabViewModel()
 //    var index = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.addSubview(tab)
+        tab.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+        }
+        
+        
+        
         categoryView.delegate = self
         
         contentsCollectionView.dataSource = self
