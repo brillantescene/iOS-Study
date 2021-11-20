@@ -9,6 +9,10 @@ import UIKit
 import Then
 import SnapKit
 
+protocol PagingTabbarDelegate {
+    func scrollToIndex(to index: Int)
+}
+
 class TabUIView: UIView {
     
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
@@ -23,6 +27,8 @@ class TabUIView: UIView {
     private let HEIGHT = 29
     
     private let tabTypes = ["내가 쓴 흔적", "내가 찜한 장소"]
+    
+    var delegate: PagingTabbarDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -72,11 +78,19 @@ extension TabUIView: UICollectionViewDelegateFlowLayout {
         let cellWidth = collectionView.frame.width / 2
         return CGSize(width: cellWidth, height: cellHeight)
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
     
+}
+extension TabUIView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.scrollToIndex(to: indexPath.row)
+        print(indexPath.row)
+    }
 }

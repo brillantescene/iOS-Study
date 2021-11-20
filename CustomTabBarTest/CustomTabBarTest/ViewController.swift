@@ -8,66 +8,62 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    @IBOutlet weak var categoryView: TabBarView!
-    @IBOutlet weak var contentsCollectionView: UICollectionView!
-    
+   
     let tab = TabUIView()
+    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        $0.collectionViewLayout = layout
+        $0.showsHorizontalScrollIndicator = false
+        $0.isPagingEnabled = true
+        $0.register(ContentsCollectionViewCell.self, forCellWithReuseIdentifier: ContentsCollectionViewCell.identifier)
+    }
     
-    var tabVM = TabViewModel()
+    // 임시
+    private let tabTypes = ["내가 쓴 흔적", "내가 찜한 장소"]
 //    var index = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.addSubview(tab)
+        view.addSubview(collectionView)
+        
         tab.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(60)
+        }
+        collectionView.snp.makeConstraints {
+            $0.top.equalTo(tab.snp.bottom)
+            $0.left.right.bottom.equalTo(view.safeAreaLayoutGuide)
         }
         
         
+        tab.delegate = self
         
-        categoryView.delegate = self
-        
-        contentsCollectionView.dataSource = self
-        contentsCollectionView.delegate = self
-        contentsCollectionView.isPagingEnabled = true
-        
-        contentsCollectionView.register(UINib(nibName: "ContentsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ContentsCollectionViewCell")
+        collectionView.dataSource = self
+        collectionView.delegate = self
     }
 }
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.tabVM.tabTypes.count
+        return tabTypes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ContentsCollectionViewCell.identifier, for: indexPath) as? ContentsCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.setCell(str: self.tabVM.tabTypes[indexPath.row])
+        cell.setCell(tabTypes[indexPath.row])
         return cell
     }
     
     
 }
-extension ViewController: UICollectionViewDelegate {
-    // 스크롤이 실행될 때, IndicatorView를 움직임
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        categoryView.indicatorLeadingConstraint.constant = scrollView.contentOffset.x / 4
-    }
-    
-//     스크롤이 끝났을 때, 페이지를 계산해서 Tab을 이동시킴
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        let page = Int(targetContentOffset.pointee.x / scrollView.frame.width)
-        categoryView.scroll(to: page)
-    }
-}
 extension ViewController: PagingTabbarDelegate {
     // 탭바를 클릭했을 때, 콘텐츠 뷰 이동
     func scrollToIndex(to index: Int) {
-        print("hi contents \(self.tabVM.tabTypes[index])")
-        contentsCollectionView.scrollToItem(at: IndexPath(row: index, section: 0), at: .centeredHorizontally, animated: true)
+        print("hi contents \(self.tabTypes[index])")
+        collectionView.scrollToItem(at: IndexPath(row: index, section: 0), at: .centeredHorizontally, animated: true)
     }
 }
 extension ViewController: UICollectionViewDelegateFlowLayout {
