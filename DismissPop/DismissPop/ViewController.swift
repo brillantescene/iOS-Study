@@ -15,7 +15,10 @@ class ViewController: UIViewController {
     }
 
     @IBAction func pushClicked(_ sender: Any) {
-        guard let nvc = self.storyboard?.instantiateInitialViewController()
+        guard let nvc = self.storyboard?.instantiateViewController(withIdentifier: "VC2") as? VC2 else {
+            return
+        }
+        self.navigationController?.pushViewController(nvc, animated: true)
     }
     
 }
