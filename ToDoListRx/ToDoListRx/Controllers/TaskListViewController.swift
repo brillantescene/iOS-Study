@@ -31,13 +31,15 @@ class TaskListViewController: UIViewController {
     func bindUI() {
         tasks
             .observe(on: MainScheduler.instance)
+        // numberOfRowsInSection 이랑 같이 설정하는건 어케하는거람?
             .bind(to: tableView.rx.items(cellIdentifier: TaskTableViewCell.identifier, cellType: TaskTableViewCell.self)) { index, item, cell in
                 print("\(index) self.filteredTasks.count \(self.filteredTasks.count)")
-                if index < self.filteredTasks.count {
-                    cell.titleLabel.text = self.filteredTasks[index].title
-                } else {
-                    cell.titleLabel.text = ""
-                }
+//                if index < self.filteredTasks.count {
+//                    cell.titleLabel.text = self.filteredTasks[index].title
+//                } else {
+//                    cell.titleLabel.text = ""
+//                }
+                cell.titleLabel.text = self.filteredTasks[index].title
             }
             .disposed(by: disposeBag)
     }
@@ -89,7 +91,6 @@ class TaskListViewController: UIViewController {
     }
 }
 //extension TaskListViewController: UITableViewDataSource {
-//
 //    func numberOfSections(in tableView: UITableView) -> Int {
 //        return 1
 //    }
