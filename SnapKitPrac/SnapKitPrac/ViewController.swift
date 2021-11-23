@@ -11,7 +11,7 @@ import Then
 
 class ViewController: UIViewController {
     
-    private lazy var mainView = MainView.init(frame: self.view.frame)
+    private var mainView = MainView()
     
     static func instance() -> ViewController {
             return ViewController.init(nibName: nil, bundle: nil)
@@ -35,7 +35,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view = mainView
+//        view = mainView
         setView()
         setLabel()
         setUpCollectionView()
@@ -49,17 +49,14 @@ extension ViewController {
         mainView.collectionView.delegate = self
         mainView.collectionView.dataSource = self
         mainView.collectionView.register(TomatoCVCell.self, forCellWithReuseIdentifier: TomatoCVCell.identifier)
-        mainView.collectionView.snp.makeConstraints {
-            $0.top.equalTo(tomatoImageView.snp.bottom)
-            $0.left.right.equalToSuperview()
-            $0.bottom.equalTo(safeArea)
-        }
+
     }
     private func setView() {
         let safeArea = view.safeAreaLayoutGuide
         view.addSubview(profileImageView)
         view.addSubview(logLabel)
         view.addSubview(tomatoImageView)
+        view.addSubview(mainView)
         
         profileImageView.snp.makeConstraints {
             $0.top.equalTo(safeArea).offset(14)
@@ -76,7 +73,10 @@ extension ViewController {
             $0.centerX.equalTo(safeArea)
             $0.size.equalTo(CGSize(width: 125, height: 125))
         }
-        
+        mainView.snp.makeConstraints {
+            $0.top.equalTo(tomatoImageView.snp.bottom).offset(30)
+            $0.left.right.bottom.equalTo(safeArea)
+        }
         profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
         tomatoImageView.layer.cornerRadius = tomatoImageView.frame.height / 2
     }
