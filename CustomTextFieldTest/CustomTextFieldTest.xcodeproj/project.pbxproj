@@ -14,6 +14,7 @@
 		44B083422762010C007A134E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44B083412762010C007A134E /* Assets.xcassets */; };
 		44B083452762010C007A134E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44B083432762010C007A134E /* LaunchScreen.storyboard */; };
 		44B0834D27620126007A134E /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B0834C27620126007A134E /* CustomTextField.swift */; };
+		44B0834F2762EB19007A134E /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B0834E2762EB19007A134E /* UITextField+Extension.swift */; };
 		B5DE148BD546F090C1DB6599 /* Pods_CustomTextFieldTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFB37FB4232E582441971826 /* Pods_CustomTextFieldTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 		44B083442762010C007A134E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44B083462762010C007A134E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44B0834C27620126007A134E /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		44B0834E2762EB19007A134E /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		D3FC771171B10562D7F0359C /* Pods-CustomTextFieldTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomTextFieldTest.debug.xcconfig"; path = "Target Support Files/Pods-CustomTextFieldTest/Pods-CustomTextFieldTest.debug.xcconfig"; sourceTree = "<group>"; };
 		FFB37FB4232E582441971826 /* Pods_CustomTextFieldTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CustomTextFieldTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -73,6 +75,7 @@
 				44B083412762010C007A134E /* Assets.xcassets */,
 				44B083432762010C007A134E /* LaunchScreen.storyboard */,
 				44B083462762010C007A134E /* Info.plist */,
+				44B0834E2762EB19007A134E /* UITextField+Extension.swift */,
 			);
 			path = CustomTextFieldTest;
 			sourceTree = "<group>";
@@ -91,7 +94,6 @@
 				D3FC771171B10562D7F0359C /* Pods-CustomTextFieldTest.debug.xcconfig */,
 				2D5E331D2C7B08DDCFA43112 /* Pods-CustomTextFieldTest.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -210,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44B0834F2762EB19007A134E /* UITextField+Extension.swift in Sources */,
 				44B0834D27620126007A134E /* CustomTextField.swift in Sources */,
 				44B0833D2762010A007A134E /* ViewController.swift in Sources */,
 				44B083392762010A007A134E /* AppDelegate.swift in Sources */,
