@@ -20,9 +20,10 @@ class CustomTextField: UITextField {
         super.init(frame: .zero)
         
         addGestureRecognizer(tapRecognizer)
+        self.addPadding()
         
-        self.layer.borderWidth = 0.3
-        self.layer.cornerRadius = 1
+        self.layer.borderWidth = 1
+        self.layer.cornerRadius = 4
         self.layer.borderColor = CGColor(gray: 0.5, alpha: 1)
         
         self.addTarget(self, action: #selector(activate), for: .editingDidBegin)
@@ -40,6 +41,6 @@ class CustomTextField: UITextField {
     
     @objc
     func deactivate() {
-        self.layer.borderColor = CGColor(gray: 1, alpha: 1)
+        self.layer.borderColor = CGColor(gray: 0.5, alpha: 1)
     }
 }
