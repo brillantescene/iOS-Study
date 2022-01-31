@@ -8,21 +8,21 @@
 import UIKit
 
 class RatingControl: UIStackView {
-
+    
     private var ratingButtons = [UIButton]()
-     
+    
     var rating = 0
     
     override init(frame: CGRect){
         super.init(frame: frame)
+        print("여긴 나오니")
         setupButtons()
-
+        
     }
-
+    
     required init(coder: NSCoder){
         super.init(coder: coder)
-        setupButtons()
-
+        
     }
     
     @objc func ratingButtonTapped(button: UIButton) {
@@ -49,12 +49,12 @@ class RatingControl: UIStackView {
         for _ in 0..<starCount {
             // Create the button
             let button = UIButton()
-//            button.backgroundColor = UIColor.red
+            //            button.backgroundColor = UIColor.red
             
             button.setImage(emptyStar, for: .normal)
-                    button.setImage(filledStar, for: .selected)
-                    button.setImage(highlightedStar, for: .highlighted)
-                    button.setImage(highlightedStar, for: [.highlighted, .selected])
+            button.setImage(filledStar, for: .selected)
+            button.setImage(highlightedStar, for: .highlighted)
+            button.setImage(highlightedStar, for: [.highlighted, .selected])
             
             // Add constraints
             button.translatesAutoresizingMaskIntoConstraints = false
@@ -78,7 +78,7 @@ class RatingControl: UIStackView {
             setupButtons()
         }
     }
-     
+    
     @IBInspectable var starCount: Int = 5 {
         didSet {
             setupButtons()

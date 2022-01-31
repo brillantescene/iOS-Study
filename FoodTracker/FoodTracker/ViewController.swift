@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var mealNameLabel: UILabel!
     @IBOutlet var photoImageView: UIImageView!
     
+    @IBOutlet weak var rating: RatingControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         nameTextField.delegate = self
