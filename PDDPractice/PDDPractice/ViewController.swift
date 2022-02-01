@@ -2,23 +2,17 @@
 //  ViewController.swift
 //  PDDPractice
 //
-//  Created by ✨EUGENE✨ on 2022/01/31.
+//  Created by ✨EUGENE✨ on 2022/02/01.
 //
 
-import Cocoa
+import UIKit
 
-class ViewController: NSViewController {
+class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
-    }
-
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
+        self.view.backgroundColor = .brown
     }
 
 
