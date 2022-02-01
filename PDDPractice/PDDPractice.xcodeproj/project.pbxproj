@@ -47,6 +47,7 @@
 		6B3B28BD27A8E68500615839 /* PDDPracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PDDPracticeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B3B28C127A8E68500615839 /* PDDPracticeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDDPracticeUITests.swift; sourceTree = "<group>"; };
 		6B3B28C327A8E68500615839 /* PDDPracticeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDDPracticeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6B3B28D027A8EA4400615839 /* RoundedView.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = RoundedView.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +104,7 @@
 				6B3B28A927A8E68500615839 /* Assets.xcassets */,
 				6B3B28AB27A8E68500615839 /* LaunchScreen.storyboard */,
 				6B3B28AE27A8E68500615839 /* Info.plist */,
+				6B3B28D027A8EA4400615839 /* RoundedView.playground */,
 			);
 			path = PDDPractice;
 			sourceTree = "<group>";
